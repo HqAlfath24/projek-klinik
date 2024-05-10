@@ -4,8 +4,14 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('welcome_message');
+        return view('halamanutama/index');
+        // echo "Hello word";
     }
+    // public function coba()
+    // {
+    //     // return view('welcome_message');
+    //     echo $this->nama;
+    // }
 }
