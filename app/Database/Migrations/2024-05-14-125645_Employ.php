@@ -22,6 +22,14 @@ class Employ extends Migration
             'birthday' => [
                 'type'       => 'DATE',
             ],
+            'gender' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'nip' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'email' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
@@ -31,6 +39,24 @@ class Employ extends Migration
                 'constraint' => '255',
             ],
             'alamat' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'no_rek' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'null'       => TRUE,
+            ],
+            'npwp' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'null'       => TRUE,
+            ],
+            'salary' => [
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'role' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],

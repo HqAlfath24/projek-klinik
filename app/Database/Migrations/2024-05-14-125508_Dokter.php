@@ -22,6 +22,10 @@ class Dokter extends Migration
             'birthday' => [
                 'type'       => 'DATE',
             ],
+            'gender' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'email' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
@@ -32,6 +36,10 @@ class Dokter extends Migration
             ],
             'alamat' => [
                 'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'sip' => [
+                'type'       => 'INT',
                 'constraint' => '255',
             ],
             'created_add' => [
