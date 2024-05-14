@@ -38,10 +38,6 @@ class Obat extends Migration
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'mg' => [
-                'type'       => 'INT',
-                'constraint' => '255',
-            ],
             'komposisi' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
