@@ -4,56 +4,46 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Dokter extends Migration
+class Obat extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_d' => [
+            'id_obt' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_d' => [
+            'nama_obt' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'birthday' => [
-                'type'       => 'DATE',
-            ],
-            'gender' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'email' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'telp' => [
+            'stok' => [
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'alamat' => [
+            'expired' => [
+                'type'       => 'DATETIME',
+            ],
+            'no_reg' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'sip' => [
+            'produsen' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'harga' => [
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'no_rek' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-                'null'       => TRUE,
-            ],
-            'npwp' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-                'null'       => TRUE,
-            ],
-            'salary' => [
+            'mg' => [
                 'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'komposisi' => [
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
             'created_add' => [
@@ -65,12 +55,12 @@ class Dokter extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_d', true);
-        $this->forge->createTable('dokter');
+        $this->forge->addKey('id_obt', true);
+        $this->forge->createTable('obat');
     }
 
     public function down()
     {
-        $this->forge->dropTable('dokter');
+        $this->forge->dropTable('obat');
     }
 }
