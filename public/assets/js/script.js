@@ -65,7 +65,7 @@ const navbarLinks = document.querySelectorAll("[data-nav-link]");
 const navbarToggler = document.querySelector("[data-nav-toggler]");
 
 const toggleNav = function () {
-  navbar.classList.toggle("active");
+  navbar.classList.toggle("active");  
   navbarToggler.classList.toggle("active");
 }
 
