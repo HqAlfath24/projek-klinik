@@ -33,6 +33,12 @@ class Obat extends Migration
             'produsen' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
+                'null'       => TRUE,
+            ],
+            'distributor' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'null'       => TRUE,
             ],
             'harga' => [
                 'type'       => 'INT',
@@ -42,11 +48,15 @@ class Obat extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'created_add' => [
+            'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],
-            'updated_add' => [
+            'updated_at' => [
+                'type'       => 'DATETIME',
+                'null'       => TRUE,
+            ],
+            'deleted_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],

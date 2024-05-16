@@ -55,16 +55,21 @@ class Employ extends Migration
             'salary' => [
                 'type'       => 'INT',
                 'constraint' => '255',
+                'null'       => TRUE,
             ],
             'role' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'created_add' => [
+            'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],
-            'updated_add' => [
+            'updated_at' => [
+                'type'       => 'DATETIME',
+                'null'       => TRUE,
+            ],
+            'deleted_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],

@@ -9,18 +9,15 @@ class Dokter extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_d' => [
+            'id_dokter' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_d' => [
+            'nama_dokter' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
-            ],
-            'birthday' => [
-                'type'       => 'DATE',
             ],
             'gender' => [
                 'type'       => 'VARCHAR',
@@ -38,6 +35,11 @@ class Dokter extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'speciality' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+                'null'       => TRUE,
+            ],
             'sip' => [
                 'type'       => 'INT',
                 'constraint' => '255',
@@ -53,14 +55,19 @@ class Dokter extends Migration
                 'null'       => TRUE,
             ],
             'salary' => [
-                'type'       => 'INT',
-                'constraint' => '255',
+                'type'       => 'DECIMAL',
+                'constraint' => '10,2',
+                'null'       => TRUE,
             ],
-            'created_add' => [
+            'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],
-            'updated_add' => [
+            'updated_at' => [
+                'type'       => 'DATETIME',
+                'null'       => TRUE,
+            ],
+            'deleted_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],

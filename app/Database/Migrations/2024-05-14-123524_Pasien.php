@@ -50,31 +50,30 @@ class Pasien extends Migration
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'emergency_cont' => [
-                'type'       => 'INT',
-                'constraint' => '255',
-                'null'       => TRUE,
-            ],
             'asuransi' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'no_polis' => [
+            'no_asuransi' => [
                 'type'       => 'INT',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'created_add' => [
+            'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],
-            'updated_add' => [
+            'updated_at' => [
+                'type'       => 'DATETIME',
+                'null'       => TRUE,
+            ],
+            'deleted_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_ps', true);
+        $this->forge->addKey('id_p', true);
         $this->forge->createTable('pasien');
     }
 
