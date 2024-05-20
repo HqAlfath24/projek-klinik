@@ -53,13 +53,13 @@ class DetPrescription extends Migration
             ],
         ]);
         $this->forge->addKey('id_detail_prescription', true);
-        $this->forge->addForeignKey('treatment_id', 'treatment', 'id_treatment', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('treatment_used_id', 'treatment_used', 'id_treatment_used', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('detail_treatment');
+        $this->forge->addForeignKey('prescription_id', 'prescription', 'id_prescription', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('drug_id', 'drug', 'id_drug', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('detail_prescription');
     }
 
     public function down()
     {
-        $this->forge->dropTable('detail_treatment');
+        $this->forge->dropTable('detail_prescription');
     }
 }
