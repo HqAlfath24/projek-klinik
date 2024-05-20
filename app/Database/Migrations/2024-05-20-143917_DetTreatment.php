@@ -4,23 +4,35 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Poli extends Migration
+class DetTreatment extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_poly' => [
+            'id_detail_treatment' => [  //id detail treatment
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name_poly' => [
+            'treatment_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'poly_code' => [
+            'treatment_used_id' => [
                 'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'amount' => [  //jumlah
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'notes' => [  //catatan
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'bhp' => [  //barang habis pakai
+                'type'       => 'INT',
                 'constraint' => '255',
             ],
             'created_at' => [
@@ -36,12 +48,14 @@ class Poli extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_poly', true);
-        $this->forge->createTable('policlinics');
+        $this->forge->addKey('id_detail_treatment', true);
+        $this->forge->addForeignKey('treatment_id', 'treatment', 'id_treatment', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('treatment_used_id', 'treatment_used', 'id_treatment_used', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('detail_treatment');
     }
 
     public function down()
     {
-        $this->forge->dropTable('policlinics');
+        $this->forge->dropTable('detail_treatment');
     }
 }

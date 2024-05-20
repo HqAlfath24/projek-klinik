@@ -4,23 +4,27 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Poli extends Migration
+class Treatment extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_poly' => [
+            'id_treatment' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name_poly' => [
+            'poly_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'poly_code' => [
+            'name_treatment' => [
                 'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'price' => [  //harga
+                'type'       => 'INT',
                 'constraint' => '255',
             ],
             'created_at' => [
@@ -36,12 +40,13 @@ class Poli extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_poly', true);
-        $this->forge->createTable('policlinics');
+        $this->forge->addKey('id_treatment', true);
+        $this->forge->addForeignKey('poly_id', 'policlinic', 'id_poly', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('treatment');
     }
 
     public function down()
     {
-        $this->forge->dropTable('policlinics');
+        $this->forge->dropTable('treatment');
     }
 }

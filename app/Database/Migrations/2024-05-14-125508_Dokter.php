@@ -35,26 +35,26 @@ class Dokter extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'speciality' => [
+            'speciality' => [  //spesialisasi
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'license' => [
+            'license' => [ // nomor surat ijin
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'account_num' => [ //no_rek
+            'account_num' => [ //nomor rekening
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'taxpayer_num' => [
+            'taxpayer_num' => [  // npwp
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'salary' => [
+            'salary' => [  // gaji
                 'type'       => 'DECIMAL',
                 'constraint' => '10,2',
                 'null'       => TRUE,
@@ -72,7 +72,7 @@ class Dokter extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_d', true);
+        $this->forge->addKey('id_doctor', true);
         $this->forge->createTable('doctor');
     }
 

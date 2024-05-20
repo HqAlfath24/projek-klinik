@@ -30,10 +30,10 @@ class Appointments extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
-            'appointment_date' => [
+            'appointment_date' => [  // tanggal janji temu
                 'type'           => 'DATE'
             ],
-            'appointment_date' => [
+            'appointment_time' => [  // jam janji temu
                 'type'           => 'TIME'
             ],
             'status'           => [
@@ -53,15 +53,15 @@ class Appointments extends Migration
                 'null'           => true
             ],
         ]);
-        $this->forge->addKey('appointment_id', true);
+        $this->forge->addKey('id_appointment', true);
         $this->forge->addForeignKey('patient_id', 'patient', 'id_patient', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('doctor_id', 'doctor', 'id_doctor', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('poly_id', 'policlinic', 'id_poly', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('appointments');
+        $this->forge->createTable('appointment');
     }
 
     public function down()
     {
-        $this->forge->dropTable('appointments');
+        $this->forge->dropTable('appointment');
     }
 }

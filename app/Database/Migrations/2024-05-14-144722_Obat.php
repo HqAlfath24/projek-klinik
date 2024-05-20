@@ -9,7 +9,7 @@ class Obat extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_obt' => [
+            'id_drug' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -37,14 +37,14 @@ class Obat extends Migration
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'expired' => [
+            'expired' => [  // kadaluarsa
                 'type'       => 'DATETIME',
             ],
-            'unit_price' => [
+            'unit_price' => [  // harga satuan
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'composition' => [
+            'composition' => [  // komposisi
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -61,7 +61,7 @@ class Obat extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_obt', true);
+        $this->forge->addKey('id_drug', true);
         $this->forge->createTable('drug');
     }
 

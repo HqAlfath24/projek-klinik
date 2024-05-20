@@ -4,61 +4,40 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Pasien extends Migration
+class DetPrescription extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_patient' => [
+            'id_detail_prescription' => [  //id detail treatment
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name_patient' => [
+            'prescrption_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'mrecord_num' => [ //nomer rekam medis
-                'type'       => 'INT',
-                'constraint' => '11',
-            ],
-            'birthday' => [
-                'type'       => 'DATE',
-            ],
-            'gender' => [
+            'drug_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'phone' => [
+            'amount' => [  //jumlah
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'email' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'address' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'badge' => [  //tanda pengenal
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'no_badge' => [  // nomor tanda pengenal
+            'dose' => [  //dosis
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'insurance' => [  // asuransi
+            'frequency' => [  //frekuensi
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
-                'null'       => TRUE,
             ],
-            'insurance_num' => [  //nomor asuransi
-                'type'       => 'INT',
+            'information' => [  //informasi
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
-                'null'       => TRUE,
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -73,12 +52,14 @@ class Pasien extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_p', true);
-        $this->forge->createTable('patient');
+        $this->forge->addKey('id_detail_prescription', true);
+        $this->forge->addForeignKey('prescription_id', 'prescription', 'id_prescription', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('drug_id', 'drug', 'id_drug', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('detail_prescription');
     }
 
     public function down()
     {
-        $this->forge->dropTable('patient');
+        $this->forge->dropTable('detail_prescription');
     }
 }

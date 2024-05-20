@@ -4,24 +4,16 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Poli extends Migration
+class Prescription extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_poly' => [
+            'id_prescription' => [  //id detail treatment
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
-            ],
-            'name_poly' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'poly_code' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -36,12 +28,12 @@ class Poli extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_poly', true);
-        $this->forge->createTable('policlinics');
+        $this->forge->addKey('id_prescription', true);
+        $this->forge->createTable('prescription');
     }
 
     public function down()
     {
-        $this->forge->dropTable('policlinics');
+        $this->forge->dropTable('prescription');
     }
 }
