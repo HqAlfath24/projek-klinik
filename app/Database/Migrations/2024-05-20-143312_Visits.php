@@ -4,23 +4,18 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class MedicalRecords extends Migration
+class Visits extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_mrecord'        => [
+            'id_visit'   => [  // id kunjungan
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'visit_id'       => [  //id kunjungan
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
-            ],
-            'emp_id'       => [  //id pegawai (perawat)
+            'appointment_id'       => [  // id janji temu
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -35,47 +30,44 @@ class MedicalRecords extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
-            'complaint'        => [  //keluhan
-                'type'           => 'TEXT',
-            ],
-            'diagnosis'        => [  //diagnosa
-                'type'           => 'TEXT',
-            ],
-            'treatment'        => [
+            'emp_id'        => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
-            'prescription'     => [  //resep
+            'poly_id'        => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
+            ],
+            'payment_status'   => [  // status pembayaran
+                'type'           => 'VARCHAR',
+                'constraint'     => '20'
             ],
             'created_at'       => [
                 'type'           => 'TIMESTAMP',
-                'null'           => true,
+                'null'           => true
             ],
             'updated_at'       => [
                 'type'           => 'TIMESTAMP',
-                'null'           => true,
+                'null'           => true
             ],
             'deleted_at'       => [
                 'type'           => 'TIMESTAMP',
-                'null'           => true,
+                'null'           => true
             ],
         ]);
-        $this->forge->addKey('record_id', true);
-        $this->forge->addForeignKey('visit_id', 'visit', 'id_visit', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('emp_id', 'employee', 'id_employee', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('patient_id', 'patient', 'id_patien', 'CASCADE', 'CASCADE');
+        $this->forge->addKey('id_visit', true);
+        $this->forge->addForeignKey('appointment_id', 'appointment', 'id_appointment', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('patient_id', 'patient', 'id_patient', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('doctor_id', 'doctor', 'id_doctor', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('treatment_used_id', 'treatment_used', 'id_treatment_used', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('prescription_id', 'prescription', 'id_prescription', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('mrecords');
+        $this->forge->addForeignKey('emp_id', 'employee', 'id_emp', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('poly_id', 'policlinic', 'id_poly', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('visit');
     }
 
     public function down()
     {
-        $this->forge->dropTable('mrecords');
+        $this->forge->dropTable('visit');
     }
 }

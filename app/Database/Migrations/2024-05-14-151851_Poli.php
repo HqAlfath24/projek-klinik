@@ -9,7 +9,7 @@ class Poli extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_poli' => [
+            'id_poly' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -36,7 +36,7 @@ class Poli extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_poli', true);
+        $this->forge->addKey('id_poly', true);
         $this->forge->createTable('policlinics');
     }
 

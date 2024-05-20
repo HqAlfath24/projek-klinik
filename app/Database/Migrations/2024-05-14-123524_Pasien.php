@@ -19,7 +19,7 @@ class Pasien extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'mrecord_num' => [
+            'mrecord_num' => [ //nomer rekam medis
                 'type'       => 'INT',
                 'constraint' => '11',
             ],
@@ -42,20 +42,20 @@ class Pasien extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'badge' => [
+            'badge' => [  //tanda pengenal
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'no_badge' => [
+            'no_badge' => [  // nomor tanda pengenal
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'insurance' => [
+            'insurance' => [  // asuransi
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'insurance_num' => [
+            'insurance_num' => [  //nomor asuransi
                 'type'       => 'INT',
                 'constraint' => '255',
                 'null'       => TRUE,

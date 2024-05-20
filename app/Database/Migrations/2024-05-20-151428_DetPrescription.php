@@ -4,27 +4,39 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Treatment extends Migration
+class DetPrescription extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_treatment' => [
+            'id_detail_prescription' => [  //id detail treatment
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'poly_id' => [
+            'prescrption_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'name_treatment' => [
+            'drug_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'price' => [  //harga
+            'amount' => [  //jumlah
                 'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'dose' => [  //dosis
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'frequency' => [  //frekuensi
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'information' => [  //informasi
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
             'created_at' => [
@@ -40,13 +52,14 @@ class Treatment extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_treatment', true);
-        $this->forge->addForeignKey('poly_id', 'policlinic', 'id_poly', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('treatment');
+        $this->forge->addKey('id_detail_prescription', true);
+        $this->forge->addForeignKey('treatment_id', 'treatment', 'id_treatment', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('treatment_used_id', 'treatment_used', 'id_treatment_used', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('detail_treatment');
     }
 
     public function down()
     {
-        $this->forge->dropTable('treatment');
+        $this->forge->dropTable('detail_treatment');
     }
 }

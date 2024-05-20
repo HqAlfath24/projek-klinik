@@ -4,28 +4,16 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Treatment extends Migration
+class TreatmentUsed extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_treatment' => [
+            'id_treatment_used' => [  //id detail treatment
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
-            ],
-            'poly_id' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'name_treatment' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
-            'price' => [  //harga
-                'type'       => 'INT',
-                'constraint' => '255',
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -40,13 +28,12 @@ class Treatment extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_treatment', true);
-        $this->forge->addForeignKey('poly_id', 'policlinic', 'id_poly', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('treatment');
+        $this->forge->addKey('id_treatment_used', true);
+        $this->forge->createTable('treatment_used');
     }
 
     public function down()
     {
-        $this->forge->dropTable('treatment');
+        $this->forge->dropTable('treatment_used');
     }
 }

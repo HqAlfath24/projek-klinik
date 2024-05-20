@@ -15,7 +15,7 @@ class Employ extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_emp' => [
+            'nama_emp' => [  // nama pegawai
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -26,7 +26,7 @@ class Employ extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'emp_num' => [
+            'emp_num' => [  // nomor induk pegawai
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -42,22 +42,22 @@ class Employ extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'account_num' => [
+            'account_num' => [  // nomor rekening
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'taxpayer_num' => [
+            'taxpayer_num' => [  // npwp
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'salary' => [
+            'salary' => [  // gaji
                 'type'       => 'INT',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'role' => [
+            'role' => [  // peran
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
