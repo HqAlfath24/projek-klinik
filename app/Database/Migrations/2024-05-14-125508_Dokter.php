@@ -9,13 +9,13 @@ class Dokter extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_dokter' => [
+            'id_doctor' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_dokter' => [
+            'name_doctor' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -27,11 +27,11 @@ class Dokter extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'telp' => [
+            'phone' => [
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'alamat' => [
+            'address' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -40,16 +40,16 @@ class Dokter extends Migration
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'sip' => [
+            'license' => [
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'no_rek' => [
+            'account_num' => [ //no_rek
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'npwp' => [
+            'taxpayer_num' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
@@ -73,11 +73,11 @@ class Dokter extends Migration
             ],
         ]);
         $this->forge->addKey('id_d', true);
-        $this->forge->createTable('dokter');
+        $this->forge->createTable('doctor');
     }
 
     public function down()
     {
-        $this->forge->dropTable('dokter');
+        $this->forge->dropTable('doctor');
     }
 }

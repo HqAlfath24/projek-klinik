@@ -9,17 +9,17 @@ class Pasien extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_ps' => [
+            'id_patient' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_ps' => [
+            'name_patient' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'no_rm' => [
+            'mrecord_num' => [
                 'type'       => 'INT',
                 'constraint' => '11',
             ],
@@ -30,7 +30,7 @@ class Pasien extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'telp' => [
+            'phone' => [
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
@@ -38,7 +38,7 @@ class Pasien extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'alamat' => [
+            'address' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -50,12 +50,12 @@ class Pasien extends Migration
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'asuransi' => [
+            'insurance' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'no_asuransi' => [
+            'insurance_num' => [
                 'type'       => 'INT',
                 'constraint' => '255',
                 'null'       => TRUE,
@@ -74,11 +74,11 @@ class Pasien extends Migration
             ],
         ]);
         $this->forge->addKey('id_p', true);
-        $this->forge->createTable('pasien');
+        $this->forge->createTable('patient');
     }
 
     public function down()
     {
-        $this->forge->dropTable('pasien');
+        $this->forge->dropTable('patient');
     }
 }

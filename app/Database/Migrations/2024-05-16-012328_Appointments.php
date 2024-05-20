@@ -25,6 +25,11 @@ class Appointments extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
             ],
+            'poly_id'        => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+            ],
             'appointment_date' => [
                 'type'           => 'DATE'
             ],
@@ -49,8 +54,9 @@ class Appointments extends Migration
             ],
         ]);
         $this->forge->addKey('appointment_id', true);
-        $this->forge->addForeignKey('patient_id', 'pasien', 'id_ps', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('doctor_id', 'dokter', 'id_dokter', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('patient_id', 'patient', 'id_patient', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('doctor_id', 'doctor', 'id_doctor', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('poly_id', 'policlinic', 'id_poly', 'CASCADE', 'CASCADE');
         $this->forge->createTable('appointments');
     }
 

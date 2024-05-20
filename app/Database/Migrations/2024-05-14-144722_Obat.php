@@ -15,16 +15,9 @@ class Obat extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_obt' => [
+            'name_drug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
-            ],
-            'stok' => [
-                'type'       => 'INT',
-                'constraint' => '255',
-            ],
-            'expired' => [
-                'type'       => 'DATETIME',
             ],
             'no_reg' => [
                 'type'       => 'VARCHAR',
@@ -40,11 +33,18 @@ class Obat extends Migration
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'harga' => [
+            'stok' => [
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'komposisi' => [
+            'expired' => [
+                'type'       => 'DATETIME',
+            ],
+            'unit_price' => [
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'composition' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -62,11 +62,11 @@ class Obat extends Migration
             ],
         ]);
         $this->forge->addKey('id_obt', true);
-        $this->forge->createTable('obat');
+        $this->forge->createTable('drug');
     }
 
     public function down()
     {
-        $this->forge->dropTable('obat');
+        $this->forge->dropTable('drug');
     }
 }

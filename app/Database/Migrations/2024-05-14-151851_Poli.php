@@ -15,11 +15,11 @@ class Poli extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_poli' => [
+            'name_poly' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'kode_poli' => [
+            'poly_code' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -37,11 +37,11 @@ class Poli extends Migration
             ],
         ]);
         $this->forge->addKey('id_poli', true);
-        $this->forge->createTable('poli');
+        $this->forge->createTable('policlinics');
     }
 
     public function down()
     {
-        $this->forge->dropTable('poli');
+        $this->forge->dropTable('policlinics');
     }
 }

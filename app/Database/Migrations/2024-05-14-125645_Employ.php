@@ -26,7 +26,7 @@ class Employ extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'nip' => [
+            'emp_num' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -34,20 +34,20 @@ class Employ extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'telp' => [
+            'phone' => [
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'alamat' => [
+            'address' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'no_rek' => [
+            'account_num' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
-            'npwp' => [
+            'taxpayer_num' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
