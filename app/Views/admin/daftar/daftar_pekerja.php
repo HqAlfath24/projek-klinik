@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item">Daftar</a></li>
+                        <li class="breadcrumb-item"><a href="#">Daftar</a></li>
                         <li class="breadcrumb-item active">Daftar Pekerja</li>
                     </ol>
                 </div>
@@ -62,13 +62,73 @@
                             <input type="hidden" id="inputId">
                             <div class="modal-body">
                                 <div class="mb-3 row">
-                                    <label for="inputNama" class="col-sm-3 col-form-label">Nama Pekerja</label>
+                                    <label for="inputNama" class="col-sm-3 col-form-label">Id Pegawai</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputNama">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Kategori</label>
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Nama Pegawai</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Birthday</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Jenis Kelamin</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">No. Induk Pegawai</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Phone</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Alamat</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">No. Rekening</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">NPWP</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Gaji</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Peran</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputEmail">
                                     </div>
@@ -87,23 +147,49 @@
                     <thead>
                         <tr>
                             <th style="width:5%;">NO</th>
-                            <th>Nama Pekerja</th>
-                            <th>Nama Kategori</th>
-                            <th style="width:15%;">Aksi</th>
+                            <th>Id Pegawai</th>
+                            <th>Nama Pegawai</th>
+                            <!-- <th>No. Reg</th> -->
+                            <!-- <th>Produsen</th> -->
+                            <!-- <th>Distributor</th> -->
+                            <th>Jenis Kelamin</th>
+                            <th>No. Induk Pegawai</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Alamat</th>
+                            <th>No. Rekening</th>
+                            <th>NPWP</th>
+                            <th>Gaji</th>
+                            <th>Peran</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-
 
 
                         <tr>
                             <td>contoh</td>
                             <td>contoh</td>
                             <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+
 
                             <td>
-                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-                                <button type="button" class="btn btn-danger btn-sm ">Delete</button>
+                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fa fa-edit" title="Edit"></i>
+                                </button>
+                                &nbsp;
+                                <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+                                    <i class="fa fa-trash-alt"></i>
+                                </button>
 
                             </td>
 
@@ -119,6 +205,15 @@
     </section>
     <!-- /.content -->
 </div>
-
+<script>
+    function hapus() {
+        pesan = confirm('yakin data barang ini dihapus ?');
+        if (pesan) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
 
 <?php echo view('layout_admin/footer'); ?>

@@ -19,7 +19,7 @@ class Obat extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'no_reg' => [
+            'reg_num' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
