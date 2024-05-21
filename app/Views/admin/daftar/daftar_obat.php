@@ -68,7 +68,25 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Kategori</label>
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Stok</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Kadaluarsa</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Harga Satuan</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Komposisi</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputEmail">
                                     </div>
@@ -87,8 +105,15 @@
                     <thead>
                         <tr>
                             <th style="width:5%;">NO</th>
+                            <th>Id Obat</th>
                             <th>Nama Obat</th>
-                            <th>Nama Kategori</th>
+                            <!-- <th>No. Reg</th> -->
+                            <!-- <th>Produsen</th> -->
+                            <!-- <th>Distributor</th> -->
+                            <th>Stok</th>
+                            <th>Kadaluarsa</th>
+                            <th>Harga Satuan</th>
+                            <th>Komposisi</th>
                             <th style="width:15%;">Aksi</th>
                         </tr>
                     </thead>
@@ -99,10 +124,20 @@
                             <td>contoh</td>
                             <td>contoh</td>
                             <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+                            <td>contoh</td>
+
 
                             <td>
-                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-                                <button type="button" class="btn btn-danger btn-sm ">Delete</button>
+                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fa fa-edit" title="Edit"></i>
+                                </button>
+                                &nbsp;
+                                <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+                                    <i class="fa fa-trash-alt"></i>
+                                </button>
 
                             </td>
 
@@ -118,6 +153,15 @@
     </section>
     <!-- /.content -->
 </div>
-
+<script>
+    function hapus() {
+        pesan = confirm('yakin data barang ini dihapus ?');
+        if (pesan) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
 
 <?php echo view('layout_admin/footer'); ?>

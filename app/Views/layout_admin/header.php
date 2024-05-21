@@ -29,7 +29,8 @@
     <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/52bd79fc65.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="<?= base_url() ?>/plugins/sweatalert2/sweetalert2.min.css">
+    <script src="<?= base_url() ?>/plugins/sweatalert2/sweetalert2.all.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -92,7 +93,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- DASHBOARD -->
                         <li class="nav-item">
-                            <a href="Admin/dashboard" class="nav-link <?= $menu == 'home' ? 'active' : '' ?>">
+                            <a href="/dashboard" class="nav-link <?= $menu == 'home' ? 'active' : '' ?>">
                                 &nbsp;
                                 <i class="fa-solid fa-gauge " style="color: #63E6BE;"></i>
                                 &nbsp;&nbsp; <p>
@@ -110,24 +111,24 @@
                                 &nbsp; &nbsp; <p>
                                     Daftar
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">5</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="Admin/daftar_obat" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
+                                    <a href="/daftar_obat" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Obat</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="Admin/daftar_pekerja" class="nav-link <?= $submenu == 'sub2' ? 'active' : '' ?>">
+                                    <a href="/daftar_pekerja" class="nav-link <?= $submenu == 'sub2' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Pekerja</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="Admin/daftar_dokter" class="nav-link">
+                                    <a href="/daftar_dokter" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Dokter</p>
                                     </a>
@@ -156,7 +157,7 @@
                                 &nbsp;&nbsp; <p>
                                     Tambah
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">5</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -214,7 +215,7 @@
                                 <p>
                                     Profile
                                     &nbsp;<i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">4</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -255,7 +256,7 @@
                                 &nbsp;&nbsp; <p>
                                     Laporan
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">4</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -296,7 +297,7 @@
                                 &nbsp;&nbsp; <p>
                                     Page
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right">3</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
