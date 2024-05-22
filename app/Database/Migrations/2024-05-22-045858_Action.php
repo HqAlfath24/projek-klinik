@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TreatmentUsed extends Migration
+class Action extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_treatment_used' => [  //id detail treatment
+            'id_action' => [  //id detail treatment
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -28,12 +28,12 @@ class TreatmentUsed extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_treatment_used', true);
-        $this->forge->createTable('treatment_used');
+        $this->forge->addKey('id_action', true);
+        $this->forge->createTable('action');
     }
 
     public function down()
     {
-        $this->forge->dropTable('treatment_used');
+        $this->forge->dropTable('action');
     }
 }

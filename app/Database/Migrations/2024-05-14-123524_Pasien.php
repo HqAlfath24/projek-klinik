@@ -31,7 +31,7 @@ class Pasien extends Migration
                 'constraint' => '255',
             ],
             'phone' => [
-                'type'       => 'INT',
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
             'email' => [
@@ -47,7 +47,7 @@ class Pasien extends Migration
                 'constraint' => '255',
             ],
             'no_badge' => [  // nomor tanda pengenal
-                'type'       => 'INT',
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
             'insurance' => [  // asuransi
@@ -56,7 +56,7 @@ class Pasien extends Migration
                 'null'       => TRUE,
             ],
             'insurance_num' => [  //nomor asuransi
-                'type'       => 'INT',
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
                 'null'       => TRUE,
             ],
@@ -73,7 +73,7 @@ class Pasien extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_p', true);
+        $this->forge->addKey('id_patient', true);
         $this->forge->createTable('patient');
     }
 

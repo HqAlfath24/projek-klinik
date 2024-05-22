@@ -4,22 +4,22 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class DetTreatment extends Migration
+class DetPrescription extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_detail_treatment' => [  //id detail treatment
+            'id_detail_prescription' => [  //id detail treatment
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'treatment_id' => [
+            'prescrption_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'treatment_used_id' => [
+            'drug_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -27,12 +27,16 @@ class DetTreatment extends Migration
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'notes' => [  //catatan
+            'dose' => [  //dosis
                 'type'       => 'INT',
                 'constraint' => '255',
             ],
-            'bhp' => [  //barang habis pakai
-                'type'       => 'INT',
+            'frequency' => [  //frekuensi
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'information' => [  //informasi
+                'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
             'created_at' => [
@@ -48,14 +52,14 @@ class DetTreatment extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_detail_treatment', true);
-        $this->forge->addForeignKey('treatment_id', 'treatment', 'id_treatment', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('treatment_used_id', 'treatment_used', 'id_treatment_used', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('detail_treatment');
+        $this->forge->addKey('id_detail_prescription', true);
+        // $this->forge->addForeignKey('prescription_id', 'prescription', 'id_prescription', 'CASCADE', 'CASCADE');
+        // $this->forge->addForeignKey('drug_id', 'drug', 'id_drug', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('detail_prescription');
     }
 
     public function down()
     {
-        $this->forge->dropTable('detail_treatment');
+        $this->forge->dropTable('detail_prescription');
     }
 }
