@@ -31,6 +31,24 @@ class Daftar extends BaseController
             'menu' => 'daftar',
             'submenu' => 'sub3',
         ];
-        echo view('admin/daftar//daftar_dokter', $data);
+        echo view('admin/daftar/daftar_dokter', $data);
+    }
+    public function daftar_poli()
+    {
+        $data = [
+            'title' => 'Daftar Poli | Klinik Erins',
+            'menu' => 'daftar',
+            'submenu' => 'sub4',
+        ];
+        echo view('admin/daftar/daftar_poli', $data);
+    }
+    public function daftar_pasien()
+    {
+        $data = [
+            'title' => 'Daftar Pasien | Klinik Erins',
+            'menu' => 'daftar',
+            'submenu' => 'sub5',
+        ];
+        echo view('admin/daftar/daftar_pasien', $data);
     }
 }

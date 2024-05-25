@@ -46,16 +46,21 @@
 
                 </ul>
 
-                <ul class="social-list">
+                <ul class="social-list login-page">
                     <li class="contact-item linkku">
-                        <i class="fa-brands fa-instagram fa-fade fa-xl" style="color: #e89292;"></i>
-                        <a href="https://www.instagram.com/klinikpratamaerin/" class="contact-link"> klinikpratamaerin
+                        <!-- <i class="fa-brands fa-instagram fa-fade fa-xl" style="color: #e89292;"></i> -->
+                        <a href="/pasien" class="contact-link"> Pasien
                         </a>
                     </li>
 
                     <li class="contact-item linkku">
-                        <i class="fa-brands fa-instagram fa-fade fa-xl" style="color: #e89292;"></i>
-                        <a href="https://www.instagram.com/erinsbeautyclinic/" class="contact-link"> erinsbeautyclinic
+                        <!-- <i class="fa-brands fa-instagram fa-fade fa-xl" style="color: #e89292;"></i> -->
+                        <a href="/karyawan" class="contact-link"> Karyawan
+                        </a>
+                    </li>
+                    <li class="contact-item linkku">
+                        <!-- <i class="fa-brands fa-instagram fa-fade fa-xl" style="color: #e89292;"></i> -->
+                        <a href="/dokter" class="contact-link"> Dokter
                         </a>
                     </li>
 
@@ -103,7 +108,7 @@
                     </ul>
                 </nav>
 
-                <a href="#" class="btn">Login Admin</a>
+                <a href="/admin" class="btn">Login Admin</a>
 
                 <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
                     <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>

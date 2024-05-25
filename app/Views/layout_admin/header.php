@@ -56,8 +56,12 @@
                 <!-- Navbar Search -->
 
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
+                    <a class="nav-link" data-widget="fullscreen" href="<?= base_url('/'); ?>" role="button">
+                        <div class="row">
+                            <i class="nav-icon fa fa-sign-out-alt text-warning">
+                            </i>
+                            <p class="text-black">logout</p>
+                        </div>
                     </a>
                 </li>
 
@@ -128,19 +132,19 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/daftar_dokter" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                    <a href="/daftar_dokter" class="nav-link <?= $submenu == 'sub3' ? 'active' : '' ?>">
+                                        <i class=" far fa-circle nav-icon"></i>
                                         <p>Daftar Dokter</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                    <a href="/daftar_poli" class="nav-link  <?= $submenu == 'sub4' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Poli</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                    <a href="/daftar_pasien" class="nav-link  <?= $submenu == 'sub5' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Pasien</p>
                                     </a>
@@ -150,7 +154,7 @@
                         </li>
 
                         <!-- TAMBAH -->
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 &nbsp;
                                 <i class="fa-solid fa-square-plus " style="color: #FFD43B;"></i>
@@ -193,7 +197,7 @@
                                 </li>
 
                             </ul>
-                        </li>
+                        </li> -->
 
 
                         <li class="nav-item">
