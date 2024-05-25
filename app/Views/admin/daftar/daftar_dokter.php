@@ -59,80 +59,76 @@
                             <div class="alert alert-primary sukses" role="alert" style="display: none">
                             </div>
                             <!-- From Input Data -->
-                            <input type="hidden" id="inputId">
+                            <input type="hidden" id="id_dokter">
                             <div class="modal-body">
-                                <div class="mb-3 row">
-                                    <label for="inputNama" class="col-sm-3 col-form-label">Id Pegawai</label>
+                                <!-- <div class="mb-3 row">
+                                    <label for="inputNama" class="col-sm-3 col-form-label">Id dokter</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputNama">
+                                        <input type="text" class="form-control" id="id_dokter">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Nama Pegawai</label>
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Nama Dokter</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Birthday</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="nama_dokter">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputEmail" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">No. Induk Pegawai</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="jenis_kelamin">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="email">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputEmail" class="col-sm-3 col-form-label">Phone</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="phone">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputEmail" class="col-sm-3 col-form-label">Alamat</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="alamat">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Spesialisasi</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="spesialisasi">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="inputEmail" class="col-sm-3 col-form-label">Nomor Surat Ijin</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nomor_surat_ijin">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputEmail" class="col-sm-3 col-form-label">No. Rekening</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="no_rekening">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="inputEmail" class="col-sm-3 col-form-label">NPWP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="npwp">
                                     </div>
                                 </div>
+
                                 <div class="mb-3 row">
                                     <label for="inputEmail" class="col-sm-3 col-form-label">Gaji</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
+                                        <input type="text" class="form-control" id="gaji">
                                     </div>
                                 </div>
-                                <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Peran</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputEmail">
-                                    </div>
-                                </div>
+
 
                             </div>
                             <div class="modal-footer">
@@ -147,20 +143,20 @@
                     <thead>
                         <tr>
                             <th style="width:5%;">NO</th>
-                            <th>Id Pegawai</th>
-                            <th>Nama Pegawai</th>
+                            <th>Id Dokter</th>
+                            <th>Nama Dokter</th>
                             <!-- <th>No. Reg</th> -->
                             <!-- <th>Produsen</th> -->
                             <!-- <th>Distributor</th> -->
                             <th>Jenis Kelamin</th>
-                            <th>No. Induk Pegawai</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Alamat</th>
+                            <th>Spesialisasi</th>
+                            <th>Nomor Surat Ijin</th>
                             <th>No. Rekening</th>
                             <th>NPWP</th>
                             <th>Gaji</th>
-                            <th>Peran</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
