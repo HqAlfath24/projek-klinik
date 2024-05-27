@@ -25,4 +25,9 @@ class Pasien extends BaseController
         ];
         return view('admin/daftar/daftar_pasien', $data);
     }
+
+    public function detail($mrecord_num)
+    {
+        echo $mrecord_num;
+    }
 }

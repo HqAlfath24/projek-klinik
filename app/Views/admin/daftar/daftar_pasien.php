@@ -177,9 +177,11 @@
                                         <i class="fa fa-edit" title="Edit"></i>
                                     </button>
                                     &nbsp;
-                                    <button type="button" class="btn btn-info btn-sm " title="detail">
+
+                                    // detail tulung di gaweke wkwkwk
+                                    <a href="/pasien/<?= $p['mrecord_num']; ?>" class="btn btn-info btn-sm " title="detail">
                                         <i class="fa-solid fa-circle-info"></i>
-                                    </button>
+                                    </a>
                                     &nbsp;
                                     <button type="button" class="btn btn-danger btn-sm " title="Hapus">
                                         <i class="fa fa-trash-alt"></i>
