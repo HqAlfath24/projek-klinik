@@ -17,14 +17,13 @@ class Appointment extends Migration
                 'auto_increment' => true,
             ],
             'patient_id'       => [
-                'type'           => 'INT',
-                'constraint'     => 11,
+                'type'           => 'VARCHAR',
+                'constraint'     => '255',
             ],
             'doctor_id'        => [
                 'type'           => 'INT',
                 'constraint'     => 11,
             ],
-
             'poly_id'        => [
                 'type'           => 'INT',
                 'constraint'     => 11,

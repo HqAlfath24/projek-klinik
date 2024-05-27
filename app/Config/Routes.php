@@ -24,3 +24,7 @@ $routes->get('/daftar_dokter', 'Admin\Daftar::daftar_dokter');
 $routes->get('/daftar_poli', 'Admin\Daftar::daftar_poli');
 // $routes->get('/daftar_pasien', 'Admin\Daftar::daftar_pasien');
 $routes->get('/daftar_pasien', 'Admin\Pasien::index');
+
+// detail
+$routes->get('/pasien/(:segment)', 'Admin\Pasien::detail/$1');
+// $routes->get('/pasien/(:segment), 'Admin\Pasien::');

@@ -15,6 +15,10 @@ class Dokter extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'name_doctor' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',

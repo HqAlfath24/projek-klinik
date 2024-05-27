@@ -11,8 +11,9 @@ class DokterSeeder extends Seeder
     {
         //
         $faker = \Faker\Factory::create('id_ID');
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $data = [
+                'slug' => $faker->unique()->uuid(),
                 'name_doctor' => $faker->name(),
                 // 'doctor_code' => $faker->unique()->randomNumber(),
                 // 'birthday' => $faker->date(),

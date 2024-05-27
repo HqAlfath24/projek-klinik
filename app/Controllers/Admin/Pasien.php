@@ -15,14 +15,25 @@ class Pasien extends BaseController
 
     public function index()
     {
-        $pasien = $this->pasienModel->findAll();
+        // $pasien = $this->pasienModel->findAll();
 
         $data = [
             'title' => 'Daftar Pasien | Klinik Erins',
             'menu' => 'daftar',
             'submenu' => 'sub5',
-            'pasien' => $pasien,
+            'pasien' => $this->pasienModel->getPasien(),
         ];
         return view('admin/daftar/daftar_pasien', $data);
+    }
+
+    public function detail($mrecord_num)
+    {
+
+        $data = [
+            // 'title' => 'Daftar Pasien | Klinik Erins', //sesuaikan saja wkwkk
+            'pasien' => $this->pasienModel->getPasien($mrecord_num),
+        ];
+        dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
+        // return view('',$data);
     }
 }

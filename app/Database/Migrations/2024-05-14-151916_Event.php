@@ -37,10 +37,10 @@ class Event extends Migration
             // 'appointment_code' => [  // jam janji temu
             //     'type'           => 'TIME'
             // ],
-            // 'status'           => [
-            //     'type'           => 'VARCHAR',
-            //     'constraint'     => '20'
-            // ],
+            'slug'           => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '255'
+            ],
             'created_at'       => [
                 'type'           => 'TIMESTAMP',
                 'null'           => true

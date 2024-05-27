@@ -15,6 +15,10 @@ class Employ extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'name_emp' => [  // nama pegawai
                 'type'       => 'VARCHAR',
                 'constraint' => '255',

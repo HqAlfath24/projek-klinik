@@ -11,8 +11,9 @@ class ObatSeeder extends Seeder
     {
         //
         $faker = \Faker\Factory::create('id_ID');
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $data = [
+                'slug' => $faker->unique()->uuid(),
                 'name_drug' => $faker->name(),
                 'no_reg' => $faker->unique()->randomNumber(),
                 'producer'    => $faker->company(),
