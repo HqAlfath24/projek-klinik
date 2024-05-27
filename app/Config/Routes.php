@@ -22,4 +22,5 @@ $routes->get('/daftar_obat', 'Admin\Daftar::daftar_obat');
 $routes->get('/daftar_pekerja', 'Admin\Daftar::daftar_pekerja');
 $routes->get('/daftar_dokter', 'Admin\Daftar::daftar_dokter');
 $routes->get('/daftar_poli', 'Admin\Daftar::daftar_poli');
-$routes->get('/daftar_pasien', 'Admin\Daftar::daftar_pasien');
+// $routes->get('/daftar_pasien', 'Admin\Daftar::daftar_pasien');
+$routes->get('/daftar_pasien', 'Admin\Pasien::index');

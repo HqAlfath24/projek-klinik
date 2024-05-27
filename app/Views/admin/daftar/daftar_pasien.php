@@ -138,7 +138,6 @@
                     <thead>
                         <tr>
                             <th style="width:5%;">NO</th>
-                            <th>Id Pasien</th>
                             <th>Nama Pasien</th>
                             <th>Nomor Rekam Medis</th>
                             <th>Birthday</th>
@@ -149,39 +148,43 @@
                             <th>Tanda Pengenal</th>
                             <th>Asuransi</th>
                             <th>No. Asuransi</th>
+                            <th>Dibuat</th>
+                            <th>Update</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $i = 1; ?>
+                        <?php foreach ($pasien as $p) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $p['name_patient']; ?></td>
+                                <td><?= $p['mrecord_num']; ?></td>
+                                <td><?= $p['birthday']; ?></td>
+                                <td><?= $p['gender']; ?></td>
+                                <td><?= $p['phone']; ?></td>
+                                <td><?= $p['email']; ?></td>
+                                <td><?= $p['address']; ?></td>
+                                <td><?= $p['no_badge']; ?></td>
+                                <td><?= $p['insurance']; ?></td>
+                                <td><?= $p['insurance_num']; ?></td>
+                                <td><?= $p['created_at']; ?></td>
+                                <td><?= $p['updated_at']; ?></td>
 
 
-                        <tr>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <i class="fa fa-edit" title="Edit"></i>
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+                                        <i class="fa fa-trash-alt"></i>
+                                    </button>
 
+                                </td>
 
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa fa-edit" title="Edit"></i>
-                                </button>
-                                &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm " title="Hapus">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
-
-                            </td>
-
-                        </tr>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
 
