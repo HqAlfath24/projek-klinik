@@ -178,7 +178,7 @@
                                     </button>
                                     &nbsp;
 
-                                    // detail tulung di gaweke wkwkwk
+                                    <!-- detail tulung di gaweke halamane koyo edit yo wkwkwk -->
                                     <a href="/pasien/<?= $p['mrecord_num']; ?>" class="btn btn-info btn-sm " title="detail">
                                         <i class="fa-solid fa-circle-info"></i>
                                     </a>
