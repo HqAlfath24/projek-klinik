@@ -173,7 +173,7 @@
 
 
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/formedit_pasien')">
                                         <i class="fa fa-edit" title="Edit"></i>
                                     </button>
                                     &nbsp;
