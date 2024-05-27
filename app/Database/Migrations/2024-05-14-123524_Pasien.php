@@ -15,13 +15,13 @@ class Pasien extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name_patient' => [
+            'mrecord_num' => [ //nomer rekam medis
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'mrecord_num' => [ //nomer rekam medis
-                'type'       => 'INT',
-                'constraint' => '11',
+            'name_patient' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
             ],
             'birthday' => [
                 'type'       => 'DATE',

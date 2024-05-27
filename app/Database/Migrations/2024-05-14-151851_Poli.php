@@ -15,6 +15,10 @@ class Poli extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'name_poly' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',

@@ -15,6 +15,10 @@ class Obat extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'name_drug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
