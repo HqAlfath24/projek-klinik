@@ -13,6 +13,7 @@ class EmploySeeder extends Seeder
         $faker = \Faker\Factory::create('id_ID');
         for ($i = 0; $i < 100; $i++) {
             $data = [
+                'slug' => $faker->unique()->uuid(),
                 'name_emp' => $faker->name(),
                 // 'doctor_code' => $faker->unique()->randomNumber(),
                 'birthday' => $faker->date(),
