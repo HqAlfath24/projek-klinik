@@ -6,24 +6,24 @@ use App\Controllers\BaseController;
 
 class Daftar extends BaseController
 {
-    public function daftar_obat(): string
-    {
-        $data = [
-            'title' => 'Daftar Obat | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub1',
-        ];
-        return view('admin/daftar/daftar_obat/view_daftar_obat', $data);
-    }
-    public function formedit_obat(): string
-    {
-        $data = [
-            'title' => 'Form Edit Daftar Obat | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub1',
-        ];
-        return view('admin/daftar/daftar_obat/formedit_obat', $data);
-    }
+    // public function daftar_obat(): string
+    // {
+    //     $data = [
+    //         'title' => 'Daftar Obat | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub1',
+    //     ];
+    //     return view('admin/daftar/daftar_obat/view_daftar_obat', $data);
+    // }
+    // public function formedit_obat(): string
+    // {
+    //     $data = [
+    //         'title' => 'Form Edit Daftar Obat | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub1',
+    //     ];
+    //     return view('admin/daftar/daftar_obat/formedit_obat', $data);
+    // }
 
     public function daftar_pekerja()
     {

@@ -107,9 +107,9 @@
                             <th style="width:5%;">NO</th>
                             <th>Id Obat</th>
                             <th>Nama Obat</th>
-                            <!-- <th>No. Reg</th> -->
-                            <!-- <th>Produsen</th> -->
-                            <!-- <th>Distributor</th> -->
+                            <th>No. Reg</th>
+                            <th>Produsen</th>
+                            <th>Distributor</th>
                             <th>Stok</th>
                             <th>Kadaluarsa</th>
                             <th>Harga Satuan</th>
@@ -119,29 +119,36 @@
                     </thead>
                     <tbody>
 
+                        <?php $i = 1; ?>
+                        <?php foreach ($obat as $o) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $o['slug']; ?></td>
+                                <td><?= $o['name_drug']; ?></td>
+                                <td><?= $o['reg_num']; ?></td>
+                                <td><?= $o['produsen']; ?></td>
+                                <td><?= $o['distributor']; ?></td>
+                                <td><?= $o['stok']; ?></td>
+                                <td><?= $o['expired']; ?></td>
+                                <td><?= $o['unit_price']; ?></td>
+                                <td><?= $o['composition']; ?></td>
+                                <td><?= $o['created_at']; ?></td>
+                                <td><?= $o['updated_at']; ?></td>
 
-                        <tr>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_obat')">
+                                        <i class="fa fa-edit" title="Edit"></i>
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+                                        <i class="fa fa-trash-alt"></i>
+                                    </button>
 
+                                </td>
 
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/formedit_obat')">
-                                    <i class="fa fa-edit" title="Edit"></i>
-                                </button>
-                                &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm " title="Hapus">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
+                            </tr>
+                        <?php endforeach; ?>
 
-                            </td>
-
-                        </tr>
                     </tbody>
                 </table>
 

@@ -15,8 +15,8 @@ class ObatSeeder extends Seeder
             $data = [
                 'slug' => $faker->unique()->uuid(),
                 'name_drug' => $faker->name(),
-                'no_reg' => $faker->unique()->randomNumber(),
-                'producer'    => $faker->company(),
+                'reg_num' => $faker->unique()->randomNumber(),
+                'produsen'    => $faker->company(),
                 'distributor' => $faker->company(),
                 'stok' => $faker->randomNumber(),
                 'expired' => $faker->date(),
@@ -25,7 +25,7 @@ class ObatSeeder extends Seeder
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
             ];
-            $this->db->table('doctor')->insert($data);
+            $this->db->table('drug')->insert($data);
         }
     }
 }
