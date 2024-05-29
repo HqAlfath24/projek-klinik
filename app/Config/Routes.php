@@ -31,8 +31,11 @@ $routes->get('/edit_dokter', 'Admin\Dokter::edit_dokter');
 
 
 // =============== employee ===============
-$routes->get('/daftar_pekerja', 'Admin\Pekerja::daftar_pekerja');
-$routes->get('/edit_pekerja', 'Admin\Pekerja::edit_pekerja');
+$routes->get('/daftar_pekerja', 'Admin\Employee::index');
+$routes->get('/detail_pekerja/(:segment)', 'Admin\Employee::detail/$1');
+// $routes->get('/pekerja/(:segment)', 'Admin\Employee::detail/$1');
+$routes->get('/edit_pekerja', 'Admin\Employee::edit_employee');
+// $routes->get('/edit_pekerja/(:segment)', 'Admin\Employee::edit_pekerja/$1');
 
 
 

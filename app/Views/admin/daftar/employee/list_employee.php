@@ -149,11 +149,9 @@
                             <th style="width:5%;">NO</th>
                             <th>Id Pegawai</th>
                             <th>Nama Pegawai</th>
-                            <!-- <th>No. Reg</th> -->
-                            <!-- <th>Produsen</th> -->
-                            <!-- <th>Distributor</th> -->
+                            <th>Tanggal Lahir</th>
                             <th>Jenis Kelamin</th>
-                            <th>No. Induk Pegawai</th>
+                            <th>N.I.P</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Alamat</th>
@@ -166,34 +164,39 @@
                     </thead>
                     <tbody>
 
+                        <?php $i = 1; ?>
+                        <?php foreach ($employee as $emp) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $emp['slug']; ?></td>
+                                <td><?= $emp['name_emp']; ?></td>
+                                <td><?= $emp['birthday']; ?></td>
+                                <td><?= $emp['gender']; ?></td>
+                                <td><?= $emp['emp_num']; ?></td>
+                                <td><?= $emp['email']; ?></td>
+                                <td><?= $emp['phone']; ?></td>
+                                <td><?= $emp['address']; ?></td>
+                                <td><?= $emp['account_num']; ?></td>
+                                <td><?= $emp['taxpayer_num']; ?></td>
+                                <td><?= $emp['salary']; ?></td>
+                                <td><?= $emp['role']; ?></td>
+                                <td><?= $emp['created_at']; ?></td>
+                                <td><?= $emp['updated_at']; ?></td>
 
-                        <tr>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
 
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_pekerja')">
+                                        <i class="fa fa-edit" title="Edit"></i>
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+                                        <i class="fa fa-trash-alt"></i>
+                                    </button>
 
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/formedit_pekerja')">
-                                    <i class="fa fa-edit" title="Edit"></i>
-                                </button>
-                                &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm " title="Hapus">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
+                                </td>
 
-                            </td>
-
-                        </tr>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
 

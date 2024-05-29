@@ -25,24 +25,24 @@ class Daftar extends BaseController
     //     return view('admin/daftar/daftar_obat/formedit_obat', $data);
     // }
 
-    public function daftar_pekerja()
-    {
-        $data = [
-            'title' => 'Daftar Pekerja | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub2',
-        ];
-        echo view('admin/daftar/daftar_pekerja/view_daftar_pekerja', $data);
-    }
-    public function formedit_pekerja(): string
-    {
-        $data = [
-            'title' => 'Form Edit Daftar Pekerja | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub1',
-        ];
-        return view('admin/daftar/daftar_pekerja/formedit_pekerja', $data);
-    }
+    // public function daftar_pekerja()
+    // {
+    //     $data = [
+    //         'title' => 'Daftar Pekerja | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub2',
+    //     ];
+    //     echo view('admin/daftar/daftar_pekerja/view_daftar_pekerja', $data);
+    // }
+    // public function formedit_pekerja(): string
+    // {
+    //     $data = [
+    //         'title' => 'Form Edit Daftar Pekerja | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub1',
+    //     ];
+    //     return view('admin/daftar/daftar_pekerja/formedit_pekerja', $data);
+    // }
     // public function daftar_dokter()
     // {
     //     $data = [
