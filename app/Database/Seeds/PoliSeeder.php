@@ -19,7 +19,7 @@ class PoliSeeder extends Seeder
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
             ];
-            $this->db->table('doctor')->insert($data);
+            $this->db->table('policlinics')->insert($data);
         }
     }
 }

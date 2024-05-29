@@ -106,26 +106,29 @@
                     <tbody>
 
 
-                        <tr>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
+                        <?php $i = 1; ?>
+                        <?php foreach ($polyclinic as $pc) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $pc['slug']; ?></td>
+                                <td><?= $pc['name_poly']; ?></td>
+                                <td><?= $pc['poly_code']; ?></td>
 
 
 
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/formedit_poli')">
-                                    <i class="fa fa-edit" title="Edit"></i>
-                                </button>
-                                &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm " title="Hapus">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_poli')">
+                                        <i class="fa fa-edit" title="Edit"></i>
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+                                        <i class="fa fa-trash-alt"></i>
+                                    </button>
 
-                            </td>
+                                </td>
 
-                        </tr>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
 

@@ -58,5 +58,8 @@ $routes->get('/edit_pasien', 'Admin\Pasien::edit_pasien');
 
 
 // =============== poli ===============
-$routes->get('/daftar_poli', 'Admin\Daftar::daftar_poli');
-$routes->get('/formedit_poli', 'Admin\Daftar::formedit_poli');
+$routes->get('/daftar_poli', 'Admin\Polyclinic::index');
+$routes->get('/detail_poli/(:segment)', 'Admin\Polyclinic::detail/$1');
+// $routes->get('/polyclinic/(:segment)', 'Admin\Polyclinic::detail/$1');
+$routes->get('/edit_poli', 'Admin\Polyclinic::edit_poly');
+// $routes->get('/edit_poli/(:segment)', 'Admin\Polyclinic::edit_poly/$1');
