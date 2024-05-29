@@ -179,7 +179,7 @@
                                     &nbsp;
 
                                     <!-- detail tulung di gaweke halamane koyo edit yo wkwkwk -->
-                                    <a href="/detail/<?= $p['mrecord_num']; ?>" class="btn btn-info btn-sm " title="detail">
+                                    <a href="/detail_pasien/<?= $p['mrecord_num']; ?>" class="btn btn-info btn-sm " title="detail">
                                         <i class="fa-solid fa-circle-info"></i>
                                     </a>
                                     &nbsp;

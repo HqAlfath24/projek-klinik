@@ -43,24 +43,24 @@ class Daftar extends BaseController
         ];
         return view('admin/daftar/daftar_pekerja/formedit_pekerja', $data);
     }
-    public function daftar_dokter()
-    {
-        $data = [
-            'title' => 'Daftar Dokter | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub3',
-        ];
-        echo view('admin/daftar/daftar_dokter/view_daftar_dokter', $data);
-    }
-    public function formedit_dokter()
-    {
-        $data = [
-            'title' => 'Form Edit Daftar Dokter | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub3',
-        ];
-        echo view('admin/daftar/daftar_dokter/formedit_dokter', $data);
-    }
+    // public function daftar_dokter()
+    // {
+    //     $data = [
+    //         'title' => 'Daftar Dokter | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub3',
+    //     ];
+    //     echo view('admin/daftar/daftar_dokter/view_daftar_dokter', $data);
+    // }
+    // public function formedit_dokter()
+    // {
+    //     $data = [
+    //         'title' => 'Form Edit Daftar Dokter | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub3',
+    //     ];
+    //     echo view('admin/daftar/daftar_dokter/formedit_dokter', $data);
+    // }
     public function daftar_poli()
     {
         $data = [
@@ -79,15 +79,15 @@ class Daftar extends BaseController
         ];
         return view('admin/daftar/daftar_poli/formedit_poli', $data);
     }
-    public function daftar_pasien()
-    {
-        $data = [
-            'title' => 'Daftar Pasien | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub5',
-        ];
-        echo view('admin/daftar/daftar_pasien/view_daftar_pasien', $data);
-    }
+    // public function daftar_pasien()
+    // {
+    //     $data = [
+    //         'title' => 'Daftar Pasien | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub5',
+    //     ];
+    //     echo view('admin/daftar/daftar_pasien/view_daftar_pasien', $data);
+    // }
     // public function formedit_pasien(): string
     // {
     //     $data = [

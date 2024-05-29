@@ -36,7 +36,6 @@ class Pasien extends BaseController
             'pasien' => $this->pasienModel->getPasien($mrecord_num),
         ];
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
-        // return view('',$data);
         return view('admin/daftar/pasien/detail_pasien', $data);
     }
 
@@ -59,7 +58,6 @@ class Pasien extends BaseController
             'pasien' => $this->pasienModel->getPasien($mrecord_num),
         ];
         dd($data);
-        // return view('admin/daftar/daftar_pasien/formedit_pasien', $data);
         // return view('admin/daftar/pasien/edit_pasien', $data);
     }
 }
