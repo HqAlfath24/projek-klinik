@@ -163,33 +163,37 @@
                     <tbody>
 
 
-                        <tr>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
-                            <td>contoh</td>
+                        <?php $i = 1; ?>
+                        <?php foreach ($dokter as $d) : ?>
+                            <tr>
+                                <th scope="row"><?= $i++; ?></th>
+                                <td><?= $d['slug']; ?></td>
+                                <td><?= $d['name_doctor']; ?></td>
+                                <td><?= $d['gender']; ?></td>
+                                <td><?= $d['email']; ?></td>
+                                <td><?= $d['phone']; ?></td>
+                                <td><?= $d['address']; ?></td>
+                                <td><?= $d['speciality']; ?></td>
+                                <td><?= $d['license']; ?></td>
+                                <td><?= $d['account_num']; ?></td>
+                                <td><?= $d['taxpayer_num']; ?></td>
+                                <td><?= $d['salary']; ?></td>
+                                <td><?= $d['created_at']; ?></td>
+                                <td><?= $d['updated_at']; ?></td>
 
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_dokter')">
+                                        <i class="fa fa-edit" title="Edit"></i>
+                                    </button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+                                        <i class="fa fa-trash-alt"></i>
+                                    </button>
 
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/formedit_dokter')">
-                                    <i class="fa fa-edit" title="Edit"></i>
-                                </button>
-                                &nbsp;
-                                <button type="button" class="btn btn-danger btn-sm " title="Hapus">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
+                                </td>
 
-                            </td>
-
-                        </tr>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
 

@@ -1,0 +1,11 @@
+<?= $dokter['slug']; ?>
+<?= $dokter['name_doctor']; ?>
+<?= $dokter['gender']; ?>
+<?= $dokter['email']; ?>
+<?= $dokter['phone']; ?>
+<?= $dokter['address']; ?>
+<?= $dokter['speciality']; ?>
+<?= $dokter['license']; ?>
+<?= $dokter['account_num']; ?>
+<?= $dokter['taxpayer_num']; ?>
+<?= $dokter['salary']; ?>

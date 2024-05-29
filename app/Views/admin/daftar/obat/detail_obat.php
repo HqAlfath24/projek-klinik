@@ -1,0 +1,11 @@
+<?= $obat['slug']; ?>
+<?= $obat['name_drug']; ?>
+<?= $obat['reg_num']; ?>
+<?= $obat['produsen']; ?>
+<?= $obat['distributor']; ?>
+<?= $obat['stok']; ?>
+<?= $obat['expired']; ?>
+<?= $obat['unit_price']; ?>
+<?= $obat['composition']; ?>
+<?= $obat['created_at']; ?>
+<?= $obat['updated_at']; ?>

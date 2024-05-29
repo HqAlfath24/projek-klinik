@@ -41,7 +41,7 @@
                 <div class="row mb-3">
                     <label for="" class="col-sm-4 col-form-label">Id Pasien</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="kodebarang" name="kodebarang">
+                        <input type="text" class="form-control" id="kodebarang" name="kodebarang" value="">
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                 <div class="row mb-3">
                     <label for="" class="col-sm-4 col-form-label">Harga</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="harga" name="harga">
+                        <input type="text" class="form-control" id="harga" name="harga" value="">
                     </div>
                 </div>
 
@@ -95,3 +95,8 @@
 </script>
 
 <?php echo view('layout_admin/footer'); ?>
+
+
+
+<!-- catatan -->
+<!-- data masih belom bisa terbaaca -->
