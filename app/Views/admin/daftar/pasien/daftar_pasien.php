@@ -173,13 +173,13 @@
 
 
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/formedit_pasien')">
+                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_pasien')">
                                         <i class="fa fa-edit" title="Edit"></i>
                                     </button>
                                     &nbsp;
 
                                     <!-- detail tulung di gaweke halamane koyo edit yo wkwkwk -->
-                                    <a href="/pasien/<?= $p['mrecord_num']; ?>" class="btn btn-info btn-sm " title="detail">
+                                    <a href="/detail/<?= $p['mrecord_num']; ?>" class="btn btn-info btn-sm " title="detail">
                                         <i class="fa-solid fa-circle-info"></i>
                                     </a>
                                     &nbsp;

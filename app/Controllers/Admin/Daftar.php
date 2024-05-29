@@ -88,13 +88,13 @@ class Daftar extends BaseController
         ];
         echo view('admin/daftar/daftar_pasien/view_daftar_pasien', $data);
     }
-    public function formedit_pasien(): string
-    {
-        $data = [
-            'title' => 'Form Edit Daftar Pasien | Klinik Erins',
-            'menu' => 'daftar',
-            'submenu' => 'sub1',
-        ];
-        return view('admin/daftar/daftar_pasien/formedit_pasien', $data);
-    }
+    // public function formedit_pasien(): string
+    // {
+    //     $data = [
+    //         'title' => 'Form Edit Daftar Pasien | Klinik Erins',
+    //         'menu' => 'daftar',
+    //         'submenu' => 'sub1',
+    //     ];
+    //     return view('admin/daftar/daftar_pasien/formedit_pasien', $data);
+    // }
 }
