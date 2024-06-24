@@ -10,12 +10,16 @@ class Pasien extends Migration
     {
         $this->forge->addField([
             'id_patient' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
-                'auto_increment' => true,
+                'type'           => 'VARCHAR',
+                'constraint'     => '255',
+                // 'unsigned'       => true,
+                // 'auto_increment' => true,
             ],
             'mrecord_num' => [ //nomer rekam medis
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'slug' => [ //nomer rekam medis
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],

@@ -11,10 +11,13 @@ class PasienSeeder extends Seeder
     {
         //
         $faker = \Faker\Factory::create('id_ID');
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 10; $i++) {
+            $nm = $faker->name();
             $data = [
-                'mrecord_num' => $faker->unique()->uuid(),
-                'name_patient' => $faker->name(),
+                'id_patient' => $faker->unique()->uuid(),
+                'mrecord_num' => $faker->unique()->randomNumber(),
+                'slug' => $nm,
+                'name_patient' => $nm,
                 'birthday' => $faker->date(),
                 // 'gender' => $faker->gender(), //pakai radio button
                 'phone' => $faker->phoneNumber(),

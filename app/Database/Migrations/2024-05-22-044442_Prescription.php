@@ -10,9 +10,9 @@ class Prescription extends Migration
     {
         $this->forge->addField([
             'id_prescription' => [  //id detail treatment
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'created_at' => [
@@ -26,6 +26,30 @@ class Prescription extends Migration
             'deleted_at' => [
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
+            ],
+            'mrecord_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'drug_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'amount' => [  //jumlah
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'dose' => [  //dosis
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'frequency' => [  //frekuensi
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'information' => [  //informasi
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
             ],
         ]);
         $this->forge->addKey('id_prescription', true);

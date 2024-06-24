@@ -10,9 +10,9 @@ class Employ extends Migration
     {
         $this->forge->addField([
             'id_emp' => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'slug' => [

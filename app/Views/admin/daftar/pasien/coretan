@@ -1,0 +1,108 @@
+<?php if (session()->getFlashdata('status')) : ?>
+    <div class="alert alert-info"><?= session()->getFlashdata('status') ?></div>
+<?php endif; ?>
+
+<form action="/daftar_pasien/save" method="post">
+    <div class="modal-body mx-3">
+        <!-- Add CSRF Token for security -->
+        <?= csrf_field() ?>
+
+        <input type="hidden" id="id_pasien" name="id_pasien">
+
+        <!-- Nama -->
+        <div class="mb-3 row">
+            <label for="name" class="col-sm-12 col-form-label">Nama</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="name" name="name" autofocus>
+            </div>
+        </div>
+
+        <!-- No. Rekam Medis -->
+        <div class="mb-3 row">
+            <label for="mrecord_num" class="col-sm-12 col-form-label">No. Rekam Medis</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="mrecord_num" name="mrecord_num">
+            </div>
+        </div>
+
+        <!-- Birthday -->
+        <div class="mb-3 row">
+            <label for="birthday" class="col-sm-12 col-form-label">Birthday</label>
+            <div class="col-sm-12">
+                <input type="date" class="form-control" id="birthday" name="birthday">
+            </div>
+        </div>
+
+        <!-- Jenis Kelamin -->
+        <div class="mb-3 row">
+            <label for="gender" class="col-sm-12 col-form-label">Jenis Kelamin</label>
+            <div class="col-sm-12">
+                <select class="form-control" id="gender" name="gender">
+                    <option value="">--- Pilih!!! ---</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="mb-3 row">
+            <label for="phone" class="col-sm-12 col-form-label">Phone</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="phone" name="phone">
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3 row">
+            <label for="email" class="col-sm-12 col-form-label">Email</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="email" name="email">
+            </div>
+        </div>
+
+        <!-- Alamat -->
+        <div class="mb-3 row">
+            <label for="address" class="col-sm-12 col-form-label">Alamat</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+        </div>
+
+        <!-- Tanda Pengenal -->
+        <div class="mb-3 row">
+            <label for="bedge" class="col-sm-12 col-form-label">Tanda Pengenal</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="bedge" name="bedge">
+            </div>
+        </div>
+
+        <!-- Nomor Tanda Pengenal -->
+        <div class="mb-3 row">
+            <label for="no_bedge" class="col-sm-12 col-form-label">Nomor Tanda Pengenal</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="no_bedge" name="no_bedge">
+            </div>
+        </div>
+
+        <!-- Asuransi -->
+        <div class="mb-3 row">
+            <label for="insurance" class="col-sm-12 col-form-label">Asuransi</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="insurance" name="insurance">
+            </div>
+        </div>
+
+        <!-- Nomor Asuransi -->
+        <div class="mb-3 row">
+            <label for="no_insurance" class="col-sm-12 col-form-label">Nomor Asuransi</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="no_insurance" name="no_insurance">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary tombol-tutup" data-bs-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary" id="tombolSimpan">Simpan</button>
+    </div>
+</form>

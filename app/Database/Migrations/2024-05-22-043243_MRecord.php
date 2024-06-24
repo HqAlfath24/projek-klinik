@@ -11,25 +11,25 @@ class MRecord extends Migration
         //
         $this->forge->addField([
             'id_mrecord'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'visit_id'       => [  //id kunjungan
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'emp_id'       => [  //id pegawai (perawat)
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'patient_id'       => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'doctor_id'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'complaint'        => [  //keluhan
@@ -39,11 +39,11 @@ class MRecord extends Migration
                 'type'           => 'TEXT',
             ],
             'treatment'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'prescription'     => [  //resep
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'created_at'       => [
