@@ -10,9 +10,9 @@ class Action extends Migration
     {
         $this->forge->addField([
             'id_action' => [  //id detail treatment
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'created_at' => [
@@ -27,13 +27,33 @@ class Action extends Migration
                 'type'       => 'DATETIME',
                 'null'       => TRUE,
             ],
+            'mrecord_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'treatment_id' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'amount' => [  //jumlah
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'notes' => [  //catatan
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'bhp' => [  //barang habis pakai
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
         ]);
         $this->forge->addKey('id_action', true);
-        $this->forge->createTable('action');
+        $this->forge->createTable('action_treatment');
     }
 
     public function down()
     {
-        $this->forge->dropTable('action');
+        $this->forge->dropTable('action_treatment');
     }
 }

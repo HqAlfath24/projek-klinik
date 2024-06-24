@@ -24,6 +24,20 @@ class Obat extends BaseController
         return view('admin/daftar/obat/daftar_obat', $data);
     }
 
+    public function create()
+    {
+        // session();
+        $data = [
+            'title' => 'Form Tambah Daftar Pasien | Klinik Erins',
+            'menu' => 'Tambah Pasien',
+            'submenu' => 'sub5',
+            'validation' => \Config\Services::validation(),
+        ];
+        // no page
+        // dd($data);
+        return view('admin/daftar/pasien/add_pasien', $data);
+    }
+
     public function detail($slug)
     {
 

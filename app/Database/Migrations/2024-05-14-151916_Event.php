@@ -10,9 +10,9 @@ class Event extends Migration
     {
         $this->forge->addField([
             'id_event'   => [  // id kunjungan
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             // 'patient_id'       => [

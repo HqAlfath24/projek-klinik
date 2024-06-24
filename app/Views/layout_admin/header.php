@@ -120,31 +120,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/daftar_obat" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
+                                    <a href="/drug" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Obat</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/daftar_pekerja" class="nav-link <?= $submenu == 'sub2' ? 'active' : '' ?>">
+                                    <a href="/employee" class="nav-link <?= $submenu == 'sub2' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Pekerja</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/daftar_dokter" class="nav-link <?= $submenu == 'sub3' ? 'active' : '' ?>">
+                                    <a href="/doctor" class="nav-link <?= $submenu == 'sub3' ? 'active' : '' ?>">
                                         <i class=" far fa-circle nav-icon"></i>
                                         <p>Daftar Dokter</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/daftar_poli" class="nav-link  <?= $submenu == 'sub4' ? 'active' : '' ?>">
+                                    <a href="/polyclinic" class="nav-link  <?= $submenu == 'sub4' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Poli</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/daftar_pasien" class="nav-link  <?= $submenu == 'sub5' ? 'active' : '' ?>">
+                                    <a href="/patient" class="nav-link  <?= $submenu == 'sub5' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Pasien</p>
                                     </a>

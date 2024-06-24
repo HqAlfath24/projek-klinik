@@ -10,9 +10,9 @@ class Treatment extends Migration
     {
         $this->forge->addField([
             'id_treatment' => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'poly_id' => [

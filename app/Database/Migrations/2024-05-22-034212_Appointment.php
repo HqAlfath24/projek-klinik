@@ -11,9 +11,9 @@ class Appointment extends Migration
         //
         $this->forge->addField([
             'id_appointment'   => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'patient_id'       => [
@@ -21,11 +21,11 @@ class Appointment extends Migration
                 'constraint'     => '255',
             ],
             'doctor_id'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'poly_id'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'appointment_date' => [  // tanggal janji temu

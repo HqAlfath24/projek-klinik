@@ -40,10 +40,20 @@
             </div>
 
             <div class="card-body">
-                <a type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a type="button" class="btn btn-primary btn-sm mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     + Tambah Data
-
                 </a>
+
+                <a href="/patient/create" class="btn btn-primary btn-sm mb-3">
+                    + Tambah Pasien
+                </a>
+
+                <?php if (session()->getFlashdata('message')) : ?>
+                    <div class="alert alert-success" role="alert">
+                        <?= session()->getFlashdata('message'); ?>
+                    </div>
+                <?php endif; ?>
+
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -60,65 +70,81 @@
                             </div>
                             <!-- From Input Data -->
                             <input type="hidden" id="id_pasien">
-                            <div class="modal-body">
-                                <!-- <div class="mb-3 row">
-                                    <label for="inputNama" class="col-sm-3 col-form-label">Id pasien</label>
+                            <div class="modal-body mx-3">
+                                <div class="mb-3 row">
+                                    <label for="inputNama" class="col-sm-12 col-form-label">Id pasien</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="id_pasien">
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Nama Pasien</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="nama_pasien">
+                                    <label for="name" class="col-sm-12 col-form-label">Nama</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="name" name="name" autofocus>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">No. Rekam Medis</label>
+                                    <label for="inputEmail" class="col-sm-12 col-form-label">No. Rekam Medis</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="no_rekam_medis">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Birthday</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="birthday">
+                                    <label for="birthday" class="col-sm-12 col-form-label">Birthday</label>
+                                    <div class="col-sm-12">
+                                        <input type="date" class="form-control" id="birthday" name="birthday">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Jenis Kelamin</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="jenis_kelamin">
+                                    <label for="gender" class="col-sm-12 col-form-label">Jenis Kelamin</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control" id="gender" name="gender">
+                                            <option value="">--- Pilih!!! ---</option>
+                                            <option value="Laki-laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Phone</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone">
+                                    <label for="phone" class="col-sm-12 col-form-label">Phone</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="phone" name="phone">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="email">
+                                    <label for="email" class="col-sm-12 col-form-label">Email</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="email" name="email">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Alamat</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="alamat">
+                                    <label for="address" class="col-sm-12 col-form-label">Alamat</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="address" name="address">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Tanda Pengenal</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="tanda_pengenal">
+                                    <label for="bedge" class="col-sm-12 col-form-label">Tanda Pengenal</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="bedge" name="bedge">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Asuransi</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="asuransi">
+                                    <label for="no_bedge" class="col-sm-12 col-form-label">Nomor Tanda Pengenal</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="no_bedge" name="no_bedge">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="insurance" class="col-sm-12 col-form-label">Asuransi</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="insurance" name="insurance">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="no_insurance" class="col-sm-12 col-form-label">Nomor Asuransi</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="no_insurance" name="no_insurance">
                                     </div>
                                 </div>
 
@@ -155,7 +181,7 @@
                     </thead>
                     <tbody>
                         <?php $i = 1; ?>
-                        <?php foreach ($pasien as $p) : ?>
+                        <?php foreach ($patient as $p) : ?>
                             <tr>
                                 <th scope="row"><?= $i++; ?></th>
                                 <td><?= $p['name_patient']; ?></td>
@@ -173,19 +199,32 @@
 
 
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_pasien')">
+                                    <!-- edit button -->
+                                    <!-- <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_pasien')">
                                         <i class="fa fa-edit" title="Edit"></i>
-                                    </button>
-                                    &nbsp;
-
-                                    <!-- detail tulung di gaweke halamane koyo edit yo wkwkwk -->
-                                    <a href="/detail_pasien/<?= $p['mrecord_num']; ?>" class="btn btn-info btn-sm " title="detail">
-                                        <i class="fa-solid fa-circle-info"></i>
+                                    </button> -->
+                                    <a href="/patient/edit/<?= $p['slug']; ?>" class="btn btn-warning btn-sm " title="edit">
+                                        <i class="fa fa-edit" title="Edit"></i>
                                     </a>
                                     &nbsp;
-                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
+
+                                    <!-- detai button -->
+                                    <a href="/patient/detail/<?= $p['slug']; ?>" class="btn btn-info btn-sm " title="detail">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </a>
+
+                                    <!-- delete button -->
+                                    &nbsp;
+                                    <!-- <button type="button" class="btn btn-danger btn-sm " title="Hapus" onclick="location.href=('/patient/delete/')">
                                         <i class="fa fa-trash-alt"></i>
-                                    </button>
+                                    </button> -->
+                                    <form action="/patient/delete/<?= $p['id_patient'] ?>" method="post" style="display:inline;">
+                                        <?= csrf_field() ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                            <i class="fa fa-trash-alt"></i>
+                                        </button>
+                                    </form>
 
                                 </td>
 
@@ -198,10 +237,11 @@
 
             </div>
             <!-- /.card -->
-
+        </div>
     </section>
     <!-- /.content -->
 </div>
+
 <script>
     function hapus() {
         pesan = confirm('yakin data barang ini dihapus ?');

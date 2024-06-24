@@ -40,10 +40,14 @@
             </div>
 
             <div class="card-body">
-                <a type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a type="button" class="btn btn-primary btn-sm mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     + Tambah Data
-
                 </a>
+
+                <a href="/patient/create" class="btn btn-primary btn-sm mb-3">
+                    + Tambah Obat
+                </a>
+
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

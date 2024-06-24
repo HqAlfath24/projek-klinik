@@ -10,9 +10,9 @@ class Dokter extends Migration
     {
         $this->forge->addField([
             'id_doctor' => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'slug' => [

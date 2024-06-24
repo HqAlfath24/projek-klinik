@@ -22,7 +22,7 @@ $routes->get('/dashboard', 'Admin\Dashboard::index');
 
 
 // =============== dokter ===============
-$routes->get('/daftar_dokter', 'Admin\Dokter::index');
+$routes->get('/doctor', 'Admin\Dokter::index');
 $routes->get('/detail_dokter/(:segment)', 'Admin\Dokter::detail/$1');
 // $routes->get('/dokter/(:segment), 'Admin\Dokter:::detail/$1'');
 $routes->get('/edit_dokter', 'Admin\Dokter::edit_dokter');
@@ -31,7 +31,7 @@ $routes->get('/edit_dokter', 'Admin\Dokter::edit_dokter');
 
 
 // =============== employee ===============
-$routes->get('/daftar_pekerja', 'Admin\Employee::index');
+$routes->get('/employee', 'Admin\Employee::index');
 $routes->get('/detail_pekerja/(:segment)', 'Admin\Employee::detail/$1');
 // $routes->get('/pekerja/(:segment)', 'Admin\Employee::detail/$1');
 $routes->get('/edit_pekerja', 'Admin\Employee::edit_employee');
@@ -40,7 +40,7 @@ $routes->get('/edit_pekerja', 'Admin\Employee::edit_employee');
 
 
 // =============== obat ===============
-$routes->get('/daftar_obat', 'Admin\Obat::index');
+$routes->get('/drug', 'Admin\Obat::index');
 $routes->get('/detail_obat/(:segment)', 'Admin\Obat::detail/$1');
 // $routes->get('/obat/(:segment)', 'Admin\Obat::detail/$1');
 $routes->get('/edit_obat', 'Admin\Obat::edit_obat');
@@ -49,16 +49,23 @@ $routes->get('/edit_obat', 'Admin\Obat::edit_obat');
 
 
 // =============== pasien ===============
-$routes->get('/daftar_pasien', 'Admin\Pasien::index');
-$routes->get('/detail_pasien/(:segment)', 'Admin\Pasien::detail/$1');
-// $routes->get('/pasien/(:segment), 'Admin\Pasien:::detail/$1'');
-$routes->get('/edit_pasien', 'Admin\Pasien::edit_pasien');
-// $routes->get('/edit_pasien/(:segment)', 'Admin\Pasien::edit_pasien/$1');
+$routes->get('/patient', 'Admin\Pasien::index');
+$routes->get('/patient/create', 'Admin\Pasien::create');
+$routes->get('/patient/detail/(:segment)', 'Admin\Pasien::detail/$1');
+// $routes->get('/edit_pasien', 'Admin\Pasien::edit_pasien');
+// $routes->get('/patient/edit', 'Admin\Pasien::edit_pasien');
+$routes->get('/patient/edit/(:segment)', 'Admin\Pasien::edit/$1');
+// =====
+$routes->post('/patient/save', 'Admin\Pasien::save');
+$routes->post('/patient/update/(:segment)', 'Admin\Pasien::update/$1');
+// $routes->post('/patient/delete/(:segment)', 'Admin\Pasien::delete/$1');
+$routes->delete('patient/delete/(:segment)', 'Admin\Pasien::delete/$1');
 
 
 
 // =============== poli ===============
-$routes->get('/daftar_poli', 'Admin\Polyclinic::index');
+$routes->get('/polyclinic', 'Admin\Polyclinic::index');
+$routes->get('/polyclinic/create', 'Admin\Polyclinic::create');
 $routes->get('/detail_poli/(:segment)', 'Admin\Polyclinic::detail/$1');
 // $routes->get('/polyclinic/(:segment)', 'Admin\Polyclinic::detail/$1');
 $routes->get('/edit_poli', 'Admin\Polyclinic::edit_poly');

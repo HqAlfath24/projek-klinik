@@ -10,29 +10,29 @@ class Visit extends Migration
     {
         $this->forge->addField([
             'id_visit'   => [  // id kunjungan
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
-                'unsigned'       => true,
+                // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'appointment_id'       => [  // id janji temu
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'patient_id'       => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'doctor_id'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'emp_id'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'poly_id'        => [
-                'type'           => 'INT',
+                'type'           => 'VARCHAR',
                 'constraint'     => 11,
             ],
             'payment_status'   => [  // status pembayaran
