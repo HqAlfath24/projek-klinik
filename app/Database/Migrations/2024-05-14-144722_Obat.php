@@ -42,7 +42,7 @@ class Obat extends Migration
                 'constraint' => '255',
             ],
             'expired' => [  // kadaluarsa
-                'type'       => 'DATETIME',
+                'type'       => 'DATE',
             ],
             'unit_price' => [  // harga satuan
                 'type'       => 'INT',

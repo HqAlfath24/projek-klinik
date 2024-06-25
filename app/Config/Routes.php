@@ -41,10 +41,13 @@ $routes->get('/edit_pekerja', 'Admin\Employee::edit_employee');
 
 // =============== obat ===============
 $routes->get('/drug', 'Admin\Obat::index');
-$routes->get('/detail_obat/(:segment)', 'Admin\Obat::detail/$1');
-// $routes->get('/obat/(:segment)', 'Admin\Obat::detail/$1');
-$routes->get('/edit_obat', 'Admin\Obat::edit_obat');
-// $routes->get('/edit_obat/(:segment)', 'Admin\Obat::edit_obat/$1');
+$routes->get('/drug/create', 'Admin\Obat::create');
+$routes->get('/drug/detail/(:segment)', 'Admin\Obat::detail/$1');
+$routes->get('/drug/edit/(:segment)', 'Admin\Obat::edit/$1');
+// =====
+$routes->post('/drug/save', 'Admin\Obat::save');
+$routes->post('/drug/update/(:segment)', 'Admin\Obat::update/$1');
+$routes->delete('drug/delete/(:segment)', 'Admin\Obat::delete/$1');
 
 
 
@@ -52,13 +55,10 @@ $routes->get('/edit_obat', 'Admin\Obat::edit_obat');
 $routes->get('/patient', 'Admin\Pasien::index');
 $routes->get('/patient/create', 'Admin\Pasien::create');
 $routes->get('/patient/detail/(:segment)', 'Admin\Pasien::detail/$1');
-// $routes->get('/edit_pasien', 'Admin\Pasien::edit_pasien');
-// $routes->get('/patient/edit', 'Admin\Pasien::edit_pasien');
 $routes->get('/patient/edit/(:segment)', 'Admin\Pasien::edit/$1');
 // =====
 $routes->post('/patient/save', 'Admin\Pasien::save');
 $routes->post('/patient/update/(:segment)', 'Admin\Pasien::update/$1');
-// $routes->post('/patient/delete/(:segment)', 'Admin\Pasien::delete/$1');
 $routes->delete('patient/delete/(:segment)', 'Admin\Pasien::delete/$1');
 
 
