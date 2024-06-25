@@ -44,7 +44,7 @@
                     + Tambah Data
                 </a>
 
-                <a href="/patient/create" class="btn btn-primary btn-sm mb-3">
+                <a href="/drug/create" class="btn btn-primary btn-sm mb-3">
                     + Tambah Obat
                 </a>
 
@@ -118,35 +118,50 @@
                             <th>Kadaluarsa</th>
                             <th>Harga Satuan</th>
                             <th>Komposisi</th>
+                            <th>created_at</th>
+                            <th>updated_at</th>
                             <th style="width:15%;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <?php $i = 1; ?>
-                        <?php foreach ($obat as $o) : ?>
+                        <?php foreach ($drug as $d) : ?>
                             <tr>
                                 <th scope="row"><?= $i++; ?></th>
-                                <td><?= $o['slug']; ?></td>
-                                <td><?= $o['name_drug']; ?></td>
-                                <td><?= $o['reg_num']; ?></td>
-                                <td><?= $o['produsen']; ?></td>
-                                <td><?= $o['distributor']; ?></td>
-                                <td><?= $o['stok']; ?></td>
-                                <td><?= $o['expired']; ?></td>
-                                <td><?= $o['unit_price']; ?></td>
-                                <td><?= $o['composition']; ?></td>
-                                <td><?= $o['created_at']; ?></td>
-                                <td><?= $o['updated_at']; ?></td>
+                                <td><?= $d['slug']; ?></td>
+                                <td><?= $d['name_drug']; ?></td>
+                                <td><?= $d['reg_num']; ?></td>
+                                <td><?= $d['produsen']; ?></td>
+                                <td><?= $d['distributor']; ?></td>
+                                <td><?= $d['stok']; ?></td>
+                                <td><?= $d['expired']; ?></td>
+                                <td><?= $d['unit_price']; ?></td>
+                                <td><?= $d['composition']; ?></td>
+                                <td><?= $d['created_at']; ?></td>
+                                <td><?= $d['updated_at']; ?></td>
 
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_obat')">
+                                    <!-- edit button -->
+                                    <a href="/drug/edit/<?= $d['slug']; ?>" class="btn btn-warning btn-sm " title="edit">
                                         <i class="fa fa-edit" title="Edit"></i>
-                                    </button>
+                                    </a>
                                     &nbsp;
-                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
-                                        <i class="fa fa-trash-alt"></i>
-                                    </button>
+
+                                    <!-- detai button -->
+                                    <a href="/drug/detail/<?= $d['slug']; ?>" class="btn btn-info btn-sm " title="detail">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </a>
+                                    &nbsp;
+
+                                    <!-- delete button -->
+                                    <form action="/drug/delete/<?= $d['id_drug'] ?>" method="post" style="display:inline;">
+                                        <?= csrf_field() ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                            <i class="fa fa-trash-alt"></i>
+                                        </button>
+                                    </form>
 
                                 </td>
 
