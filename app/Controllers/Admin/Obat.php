@@ -45,8 +45,8 @@ class Obat extends BaseController
             'reg_num' => 'required|is_unique[drug.reg_num]',
         ])) {
             $validation = \Config\Services::validation();
-            dd($validation);
-            // return redirect()->to('/drug/create')->withInput()->with('validation', $validation);
+            // dd($validation);
+            return redirect()->to('/drug/create')->withInput()->with('validation', $validation);
         }
 
         $slug = url_title($this->request->getVar('name_drug'), '-', true);

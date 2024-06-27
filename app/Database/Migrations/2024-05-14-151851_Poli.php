@@ -41,11 +41,11 @@ class Poli extends Migration
             ],
         ]);
         $this->forge->addKey('id_poly', true);
-        $this->forge->createTable('policlinics');
+        $this->forge->createTable('polyclinic');
     }
 
     public function down()
     {
-        $this->forge->dropTable('policlinics');
+        $this->forge->dropTable('polyclinic');
     }
 }
