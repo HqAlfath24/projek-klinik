@@ -12,9 +12,11 @@ class PoliSeeder extends Seeder
         //
         $faker = \Faker\Factory::create('id_ID');
         for ($i = 0; $i < 100; $i++) {
+            $name = $faker->company();
             $data = [
-                'name_poly' => $faker->unique()->uuid(),
-                'name_poly' => $faker->company(),
+                'id_poly' => $faker->unique()->uuid(),
+                'slug' => $name,
+                'name_poly' => $name,
                 'poly_code' => $faker->unique()->randomNumber(),
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),

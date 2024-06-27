@@ -40,10 +40,10 @@
             </div>
 
             <div class="card-body">
-                <a type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    + Tambah Data
-
+                <a href="/polyclinic/create" class="btn btn-primary btn-sm mb-3">
+                    + Tambah Poli
                 </a>
+
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -110,20 +110,33 @@
                         <?php foreach ($polyclinic as $pc) : ?>
                             <tr>
                                 <th scope="row"><?= $i++; ?></th>
-                                <td><?= $pc['slug']; ?></td>
+                                <td><?= $pc['id_poly']; ?></td>
                                 <td><?= $pc['name_poly']; ?></td>
                                 <td><?= $pc['poly_code']; ?></td>
 
 
 
                                 <td>
-                                    <button type="button" class="btn btn-warning btn-sm" onclick="location.href=('/edit_poli')">
+                                    <!-- edit button -->
+                                    <a href="/polyclinic/edit/<?= $pc['slug']; ?>" class="btn btn-warning btn-sm " title="edit">
                                         <i class="fa fa-edit" title="Edit"></i>
-                                    </button>
+                                    </a>
                                     &nbsp;
-                                    <button type="button" class="btn btn-danger btn-sm " title="Hapus">
-                                        <i class="fa fa-trash-alt"></i>
-                                    </button>
+
+                                    <!-- detai button -->
+                                    <a href="/polyclinic/detail/<?= $pc['slug']; ?>" class="btn btn-info btn-sm " title="detail">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </a>
+                                    &nbsp;
+
+                                    <!-- delete button -->
+                                    <form action="/polyclinic/delete/<?= $pc['id_poly'] ?>" method="post" style="display:inline;">
+                                        <?= csrf_field() ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                            <i class="fa fa-trash-alt"></i>
+                                        </button>
+                                    </form>
 
                                 </td>
 
