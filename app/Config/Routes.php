@@ -32,10 +32,17 @@ $routes->get('/edit_dokter', 'Admin\Dokter::edit_dokter');
 
 // =============== employee ===============
 $routes->get('/employee', 'Admin\Employee::index');
-$routes->get('/detail_pekerja/(:segment)', 'Admin\Employee::detail/$1');
+$routes->get('/employee/create', 'Admin\Employee::create');
+$routes->get('/employee/detail/(:segment)', 'Admin\Employee::detail/$1');
+$routes->get('/employee/edit/(:segment)', 'Admin\Employee::edit/$1');
+// $routes->get('/detail_pekerja/(:segment)', 'Admin\Employee::detail/$1');
 // $routes->get('/pekerja/(:segment)', 'Admin\Employee::detail/$1');
 $routes->get('/edit_pekerja', 'Admin\Employee::edit_employee');
 // $routes->get('/edit_pekerja/(:segment)', 'Admin\Employee::edit_pekerja/$1');
+// =====
+$routes->post('/employee/save', 'Admin\Employee::save');
+$routes->post('/employee/update/(:segment)', 'Admin\Employee::update/$1');
+$routes->delete('employee/delete/(:segment)', 'Admin\Employee::delete/$1');
 
 
 
@@ -67,10 +74,20 @@ $routes->delete('patient/delete/(:segment)', 'Admin\Pasien::delete/$1');
 $routes->get('/polyclinic', 'Admin\Polyclinic::index');
 $routes->get('/polyclinic/create', 'Admin\Polyclinic::create');
 $routes->get('/polyclinic/detail/(:segment)', 'Admin\Polyclinic::detail/$1');
-// $routes->get('/polyclinic/(:segment)', 'Admin\Polyclinic::detail/$1');
-// $routes->get('/edit_poli', 'Admin\Polyclinic::edit_poly');
 $routes->get('/polyclinic/edit/(:segment)', 'Admin\Polyclinic::edit/$1');
 // =====
 $routes->post('/polyclinic/save', 'Admin\Polyclinic::save');
 $routes->post('/polyclinic/update/(:segment)', 'Admin\Pasien::update/$1');
 $routes->delete('polyclinic/delete/(:segment)', 'Admin\Polyclinic::delete/$1');
+
+
+
+// =============== treatment ===============
+// $routes->get('/polyclinic', 'Admin\Polyclinic::index');
+// $routes->get('/polyclinic/create', 'Admin\Polyclinic::create');
+// $routes->get('/polyclinic/detail/(:segment)', 'Admin\Polyclinic::detail/$1');
+// $routes->get('/polyclinic/edit/(:segment)', 'Admin\Polyclinic::edit/$1');
+// // =====
+// $routes->post('/polyclinic/save', 'Admin\Polyclinic::save');
+// $routes->post('/polyclinic/update/(:segment)', 'Admin\Pasien::update/$1');
+// $routes->delete('polyclinic/delete/(:segment)', 'Admin\Polyclinic::delete/$1');
