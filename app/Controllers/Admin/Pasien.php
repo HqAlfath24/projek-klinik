@@ -23,7 +23,7 @@ class Pasien extends BaseController
             'submenu' => 'sub5',
             'patient' => $this->pasienModel->getPasien(),
         ];
-        return view('admin/daftar/pasien/daftar_pasien', $data);
+        return view('admin/daftar/pasien/list', $data);
     }
 
     public function create()
@@ -37,7 +37,7 @@ class Pasien extends BaseController
         ];
         // no page
         // dd($data);
-        return view('admin/daftar/pasien/add_pasien', $data);
+        return view('admin/daftar/pasien/add', $data);
     }
 
     public function save()
@@ -105,7 +105,7 @@ class Pasien extends BaseController
             );
         }
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
-        return view('admin/daftar/pasien/detail_pasien', $data);
+        return view('admin/daftar/pasien/detail', $data);
     }
 
     public function edit($slug)
@@ -118,7 +118,7 @@ class Pasien extends BaseController
             'patient' => $this->pasienModel->getPasien($slug),
         ];
 
-        return view('admin/daftar/pasien/edit_pasien', $data);
+        return view('admin/daftar/pasien/edit', $data);
     }
 
     public function update($id_patient)

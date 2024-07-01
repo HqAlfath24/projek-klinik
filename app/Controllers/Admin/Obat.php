@@ -21,7 +21,7 @@ class Obat extends BaseController
             'submenu' => 'sub1',
             'drug' => $this->obatModel->getObat(),
         ];
-        return view('admin/daftar/obat/daftar_obat', $data);
+        return view('admin/daftar/obat/list', $data);
     }
 
     public function create()
@@ -35,7 +35,7 @@ class Obat extends BaseController
         ];
         // no page
         // dd($data);
-        return view('admin/daftar/obat/add_obat', $data);
+        return view('admin/daftar/obat/add', $data);
     }
 
     public function save()
@@ -77,7 +77,7 @@ class Obat extends BaseController
             'drug' => $this->obatModel->getObat($slug),
         ];
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
-        return view('admin/daftar/obat/detail_obat', $data);
+        return view('admin/daftar/obat/detail', $data);
     }
 
     public function edit($slug)
@@ -90,7 +90,7 @@ class Obat extends BaseController
             'drug' => $this->obatModel->getObat($slug),
         ];
         // dd($data);
-        return view('admin/daftar/obat/edit_obat', $data);
+        return view('admin/daftar/obat/edit', $data);
     }
 
     public function update($id_drug)
