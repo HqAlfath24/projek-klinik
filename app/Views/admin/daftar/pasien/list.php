@@ -40,10 +40,6 @@
             </div>
 
             <div class="card-body">
-                <a type="button" class="btn btn-primary btn-sm mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    + Tambah Data
-                </a>
-
                 <a href="/patient/create" class="btn btn-primary btn-sm mb-3">
                     + Tambah Pasien
                 </a>
