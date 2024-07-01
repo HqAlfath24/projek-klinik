@@ -23,7 +23,7 @@ class Dokter extends BaseController
             'submenu' => 'sub5',
             'dokter' => $this->dokterModel->getDokter(),
         ];
-        return view('admin/daftar/dokter/daftar_dokter', $data);
+        return view('admin/daftar/dokter/list', $data);
     }
 
     public function create()
@@ -85,7 +85,7 @@ class Dokter extends BaseController
             'dokter' => $this->dokterModel->getDokter($slug),
         ];
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
-        return view('admin/daftar/dokter/detail_dokter', $data);
+        return view('admin/daftar/dokter/detail', $data);
     }
 
     // public function edit_dokter()
@@ -108,7 +108,7 @@ class Dokter extends BaseController
             'doctor' => $this->dokterModel->getDokter($slug),
         ];
         // dd($data);
-        return view('admin/daftar/dokter/edit_dokter', $data);
+        return view('admin/daftar/dokter/edit', $data);
     }
 
     public function update($id_doctor)
