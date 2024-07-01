@@ -41,7 +41,7 @@
 
             <div class="card-body">
                 <a href="/employee/create" class="btn btn-primary btn-sm mb-3">
-                    + Tambah Poli
+                    + Tambah Pekerja
                 </a>
 
                 <!-- Modal -->

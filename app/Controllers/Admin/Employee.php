@@ -21,7 +21,7 @@ class Employee extends BaseController
             'submenu' => 'sub2',
             'employee' => $this->employModel->getEmployee(),
         ];
-        return view('admin/daftar/employee/list_employee', $data);
+        return view('admin/daftar/employee/list', $data);
     }
 
     public function create()
@@ -35,7 +35,7 @@ class Employee extends BaseController
         ];
         // no page
         // dd($data);
-        return view('admin/daftar/employee/add_employee', $data);
+        return view('admin/daftar/employee/add', $data);
     }
 
     public function save()
@@ -82,7 +82,7 @@ class Employee extends BaseController
             'submenu' => 'sub1',
             'employee' => $this->employModel->getEmployee($slug),
         ];
-        return view('admin/daftar/employee/detail_employee', $data);
+        return view('admin/daftar/employee/detail', $data);
     }
 
     // public function edit_employee()
@@ -104,7 +104,7 @@ class Employee extends BaseController
             'validation' => \Config\Services::validation(),
             'employee' => $this->employModel->getEmployee($slug),
         ];
-        return view('admin/daftar/employee/edit_employee', $data);
+        return view('admin/daftar/employee/edit', $data);
     }
 
     public function update($id_emp)
