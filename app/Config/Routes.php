@@ -23,10 +23,16 @@ $routes->get('/dashboard', 'Admin\Dashboard::index');
 
 // =============== dokter ===============
 $routes->get('/doctor', 'Admin\Dokter::index');
-$routes->get('/detail_dokter/(:segment)', 'Admin\Dokter::detail/$1');
+$routes->get('/doctor/create', 'Admin\Dokter::create');
+$routes->get('/doctor/detail/(:segment)', 'Admin\Dokter::detail/$1');
+$routes->get('/doctor/edit/(:segment)', 'Admin\Dokter::edit/$1');
 // $routes->get('/dokter/(:segment), 'Admin\Dokter:::detail/$1'');
-$routes->get('/edit_dokter', 'Admin\Dokter::edit_dokter');
+// $routes->get('/edit_dokter', 'Admin\Dokter::edit_dokter');
 // $routes->get('/edit_dokter/(:segment)', 'Admin\Dokter::edit_dokter/$1');
+// =====
+$routes->post('/doctor/save', 'Admin\Dokter::save');
+$routes->post('/doctor/update/(:segment)', 'Admin\Dokter::update/$1');
+$routes->delete('doctor/delete/(:segment)', 'Admin\Dokter::delete/$1');
 
 
 
@@ -37,7 +43,7 @@ $routes->get('/employee/detail/(:segment)', 'Admin\Employee::detail/$1');
 $routes->get('/employee/edit/(:segment)', 'Admin\Employee::edit/$1');
 // $routes->get('/detail_pekerja/(:segment)', 'Admin\Employee::detail/$1');
 // $routes->get('/pekerja/(:segment)', 'Admin\Employee::detail/$1');
-$routes->get('/edit_pekerja', 'Admin\Employee::edit_employee');
+// $routes->get('/edit_pekerja', 'Admin\Employee::edit_employee');
 // $routes->get('/edit_pekerja/(:segment)', 'Admin\Employee::edit_pekerja/$1');
 // =====
 $routes->post('/employee/save', 'Admin\Employee::save');

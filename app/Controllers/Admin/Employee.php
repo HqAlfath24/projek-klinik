@@ -122,7 +122,7 @@ class Employee extends BaseController
             // return redirect()->to('/patient/edit/' . $currentPoly['slug'])->withInput()->with('validation', $validation);
         }
 
-        $slug = url_title($this->request->getVar('name_poly'), '-', true);
+        $slug = url_title($this->request->getVar('name_emp'), '-', true);
         $this->employModel->save([
             'id_emp' => $id_emp,
             'slug' => $slug,

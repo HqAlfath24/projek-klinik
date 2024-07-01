@@ -1,15 +1,10 @@
-<?php echo view('layout_admin/header'); ?>
-<?= $this->section('content'); ?>
-
-
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Form Edit Daftar Dokter</h1>
+                    <h1>Form Edit Daftar Pasien</h1>
                 </div>
 
             </div>
@@ -22,7 +17,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <button type="button" class="btn btn-sm btn-warning" onclick="location.href=('/daftar_dokter')">
+                <button type="button" class="btn btn-sm btn-warning" onclick="location.href=('/doctor')">
                     <i class="fa fa-backward"></i> Kembali
                 </button>
 
@@ -37,130 +32,59 @@
             </div>
 
             <div class="card-body">
-
-                <div class="row mb-3">
-                    <label for="" class="col-sm-4 col-form-label">Id Dokter</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="kodebarang" name="kodebarang">
+                <?= $validation->listErrors(); ?>
+                <form action="/doctor/update/<?= $doctor['id_doctor']; ?>" method="post">
+                    <?= csrf_field(); ?>
+                    <div class="mb-3">
+                        <label for="name_doctor" class="form-label">Nama Pegawai</label>
+                        <input type="text" class="form-control <?= ($validation->hasError('name_doctor')) ? 'is-invalid' : ''; ?>" id="name_doctor" name="name_doctor" autofocus value="<?= $doctor['name_doctor']; ?>">
                     </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="" class="col-sm-4 col-form-label">Nama Dokter</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="namabarang" name="namabarang">
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Jenis Kelamin</label>
+                        <!-- <input type="checkbox" class="form-control" id="gender" name="gender"> -->
+                        <input type="radio" name="gender" <?php if (isset($doctor['gender']) && $doctor['gender'] == "female") echo "checked"; ?> value="female">Perempuan
+                        <input type="radio" name="gender" <?php if (isset($doctor['gender']) && $doctor['gender'] == "male") echo "checked"; ?> value="male">Laki-laki
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="jenis_kelamin" class="col-sm-4 col-form-label">Jenis Kelamin</label>
-                    <div class="col-sm-8">
-                        <select class="form-select" id="jenis_kelamin" name="jenis_kelamin">
-                            <option value="Laki-laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
+                    <div class=" mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <!-- <input type="text" class="form-control" id="email" name="email"> -->
+                        <input type="email" class="form-control" id="email" name="email" value="<?= $doctor['email']; ?>">
                     </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="email" class="col-sm-4 col-form-label">Email</label>
-                    <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email" name="email">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="number" class="form-control" id="phone" name="phone" value="<?= $doctor['phone']; ?>">
                     </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="phone" class="col-sm-4 col-form-label">Phone</label>
-                    <div class="col-sm-8">
-                        <input type="tel" class="form-control" id="phone" name="phone">
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Alamat</label>
+                        <input type="text" class="form-control" id="address" name="address" value="<?= $doctor['address']; ?>">
                     </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="alamat" class="col-sm-4 col-form-label">Alamat</label>
-                    <div class="col-sm-8">
-                        <textarea class="form-control" id="alamat" name="alamat"></textarea>
+                    <div class="mb-3">
+                        <label for="speciality" class="form-label">Spesialisasi</label>
+                        <input type="text" class="form-control" id="speciality" name="speciality" value="<?= $doctor['speciality']; ?>">
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="license" class="form-label">No. Lisensi</label>
+                        <input type="number" class="form-control" id="license" name="license" value="<?= $doctor['license']; ?>" readonly>
+                        <div class="mb-3">
+                            <label for="account_num" class="form-label">No. Rekening</label>
+                            <input type="number" class="form-control" id="account_num" name="account_num" value="<?= $doctor['account_num']; ?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taxpayer_num" class="form-label">NPWP</label>
+                            <input type="number" class="form-control" id="taxpayer_num" name="taxpayer_num" value="<?= $doctor['taxpayer_num']; ?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="salary" class="form-label">Gaji</label>
+                            <input type="number" class="form-control" id="salary" name="salary" value="<?= $doctor['salary']; ?>" readonly>
+                        </div>
 
-                <div class="row mb-3">
-                    <label for="spesialisasi" class="col-sm-4 col-form-label">Spesialisasi</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="spesialisasi" name="spesialisasi">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="nomor_ijin" class="col-sm-4 col-form-label">Nomor Surat Ijin</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="nomor_ijin" name="nomor_ijin">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="nomor_rekening" class="col-sm-4 col-form-label">No. Rekening</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="nomor_rekening" name="nomor_rekening">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="npwp" class="col-sm-4 col-form-label">NPWP</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="npwp" name="npwp">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="gaji" class="col-sm-4 col-form-label">Gaji</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="gaji" name="gaji">
-                    </div>
-                </div>
-
-
-
-
-
-
-
-                <div class="row mb-3">
-                    <label for="" class="col-sm-4 col-form-label">Harga</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="harga" name="harga">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="" class="col-sm-4 col-form-label">Stok</label>
-                    <div class="col-sm-8">
-                        <input type="number" class="form-control" id="stok" name="stok">
-                    </div>
-                </div>
-
-
-
-                <div class="row mb-3">
-                    <label for="" class="col-sm-4 col-form-label"></label>
-                    <div class="col-sm-8">
-                        <input type="submit" value="Simpan" class="btn btn-success">
-                    </div>
-                </div>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                </form>
 
             </div>
             <!-- /.card -->
 
+        </div>
     </section>
     <!-- /.content -->
 </div>
-<script>
-    function hapus() {
-        pesan = confirm('yakin data barang ini dihapus ?');
-        if (pesan) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-</script>
-
-<?php echo view('layout_admin/footer'); ?>
