@@ -23,7 +23,7 @@ class Polyclinic extends BaseController
             'submenu' => 'sub5',
             'polyclinic' => $this->polyclinicModel->getPoly(),
         ];
-        return view('admin/daftar/polyclinic/list_polyclinic', $data);
+        return view('admin/daftar/polyclinic/list', $data);
     }
 
     public function create()
@@ -37,7 +37,7 @@ class Polyclinic extends BaseController
         ];
         // no page
         // dd($data);
-        return view('admin/daftar/polyclinic/add_polyclinic', $data);
+        return view('admin/daftar/polyclinic/add', $data);
     }
 
     public function save()
@@ -73,7 +73,7 @@ class Polyclinic extends BaseController
             'polyclinic' => $this->polyclinicModel->getPoly($slug),
         ];
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
-        return view('admin/daftar/polyclinic/detail_polyclinic', $data);
+        return view('admin/daftar/polyclinic/detail', $data);
     }
 
     // public function edit_poly()
@@ -96,7 +96,7 @@ class Polyclinic extends BaseController
             'polyclinic' => $this->polyclinicModel->getPoly($slug),
         ];
         // dd($data);
-        return view('admin/daftar/polyclinic/edit_polyclinic', $data);
+        return view('admin/daftar/polyclinic/edit', $data);
     }
 
     public function update($id_poly)
