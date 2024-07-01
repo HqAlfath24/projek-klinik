@@ -50,8 +50,8 @@
                     <div class="mb-3">
                         <label for="gender" class="form-label">Jenis Kelamin</label>
                         <!-- <input type="checkbox" class="form-control" id="gender" name="gender"> -->
-                        <input type="radio" name="gender" value="female">Perempuan
-                        <input type="radio" name="gender" value="male">Laki-laki
+                        <input type="radio" name="gender" value="female" <?= old('gender') == 'female' ? 'checked' : ''; ?>>Perempuan
+                        <input type="radio" name="gender" value="male" <?= old('gender') == 'male' ? 'checked' : ''; ?>>Laki-laki
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
