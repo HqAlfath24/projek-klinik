@@ -21,6 +21,7 @@ class Polyclinic extends BaseController
             'title' => 'Daftar Poli | Klinik Erins',
             'menu' => 'daftar',
             'submenu' => 'sub5',
+            'validation' => \Config\Services::validation(),
             'polyclinic' => $this->polyclinicModel->getPoly(),
         ];
         return view('admin/daftar/polyclinic/list', $data);
