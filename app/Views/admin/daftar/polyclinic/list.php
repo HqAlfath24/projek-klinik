@@ -27,124 +27,110 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Daftar Poli</h3>
+                <!-- <h3 class="card-title">Daftar Poli</h3> -->
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" href="#">Poli</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Treatment</a>
+                    </li>
+                </ul>
 
-                <div class="card-tools">
+                <!-- <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
                         <i class="fas fa-times"></i>
                     </button>
-                </div>
+                </div> -->
             </div>
 
             <div class="card-body">
-                <a href="/polyclinic/create" class="btn btn-primary btn-sm mb-3">
+                <!-- <a href="/polyclinic/create" class="btn btn-primary btn-sm mb-3">
                     + Tambah Poli
-                </a>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Form Daftar Poli</h1>
-                                <button type="button" class="btn-close tombol-tutup" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <!-- kalau error -->
-                            <div class="alert alert-danger error" role="alert" style="display: none">
-                            </div>
-                            <!-- kalau sukses -->
-                            <div class="alert alert-primary sukses" role="alert" style="display: none">
-                            </div>
-                            <!-- From Input Data -->
-                            <input type="hidden" id="id_poli">
-                            <div class="modal-body">
-                                <!-- <div class="mb-3 row">
-                                    <label for="inputNama" class="col-sm-3 col-form-label">Id Poli</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="id_poli">
-                                    </div>
-                                </div> -->
-                                <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Nama Poli</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="nama_poli">
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <label for="inputEmail" class="col-sm-3 col-form-label">Kode Poli</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="kode_poli">
-                                    </div>
-                                </div>
+                </a> -->
 
 
 
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary tombol-tutup" data-bs-dismiss="modal">Tutup</button>
-                                <button type="button" class="btn btn-primary" id="tombolSimpan">Simpan</button>
-                            </div>
+                <div class="mb-5">
+                    <h3>Tambah Poli</h3>
+                    <?= $validation->listErrors(); ?>
+                    <form class="row g-3" action="/polyclinic/save" method="post">
+                        <?= csrf_field(); ?>
+                        <div class="col-md-6 mb-3">
+                            <label for="name_poly" class="form-label">Nama Poli</label>
+                            <input type="text" class="form-control " id="name_poly" name="name_poly" autofocus value="<?= old('name_poly'); ?>">
                         </div>
-                    </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="poly_code" class="form-label">Kode Poli</label>
+                            <!-- <input type="text" class="form-control" id="poly_code" name="poly_code"> -->
+                            <input type="text" class="form-control" id="poly_code" name="poly_code" value="<?= old('poly_code'); ?>">
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                    <hr>
                 </div>
 
-                <table class="table table-striped table-bordered" style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th style="width:5%;">NO</th>
-                            <th>Id Poli</th>
-                            <th>Nama Poli</th>
-                            <th>Kode Poli</th>
-
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-
-                        <?php $i = 1; ?>
-                        <?php foreach ($polyclinic as $pc) : ?>
+                <div class="">
+                    <h3>Daftar Poli</h3>
+                    <table class="table table-striped table-bordered" style="width: 100%;">
+                        <thead>
                             <tr>
-                                <th scope="row"><?= $i++; ?></th>
-                                <td><?= $pc['id_poly']; ?></td>
-                                <td><?= $pc['name_poly']; ?></td>
-                                <td><?= $pc['poly_code']; ?></td>
+                                <th style="width:5%;">NO</th>
+                                <th>Id Poli</th>
+                                <th>Nama Poli</th>
+                                <th>Kode Poli</th>
 
-
-
-                                <td>
-                                    <!-- edit button -->
-                                    <a href="/polyclinic/edit/<?= $pc['slug']; ?>" class="btn btn-warning btn-sm " title="edit">
-                                        <i class="fa fa-edit" title="Edit"></i>
-                                    </a>
-                                    &nbsp;
-
-                                    <!-- detai button -->
-                                    <a href="/polyclinic/detail/<?= $pc['slug']; ?>" class="btn btn-info btn-sm " title="detail">
-                                        <i class="fa-solid fa-circle-info"></i>
-                                    </a>
-                                    &nbsp;
-
-                                    <!-- delete button -->
-                                    <form action="/polyclinic/delete/<?= $pc['id_poly'] ?>" method="post" style="display:inline;">
-                                        <?= csrf_field() ?>
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-danger btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
-                                            <i class="fa fa-trash-alt"></i>
-                                        </button>
-                                    </form>
-
-                                </td>
-
+                                <th>Aksi</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
 
+
+                            <?php $i = 1; ?>
+                            <?php foreach ($polyclinic as $pc) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td><?= $pc['id_poly']; ?></td>
+                                    <td><?= $pc['name_poly']; ?></td>
+                                    <td><?= $pc['poly_code']; ?></td>
+
+
+
+                                    <td>
+                                        <!-- edit button -->
+                                        <a href="/polyclinic/edit/<?= $pc['slug']; ?>" class="btn btn-warning btn-sm " title="edit">
+                                            <i class="fa fa-edit" title="Edit"></i>
+                                        </a>
+                                        &nbsp;
+
+                                        <!-- detai button -->
+                                        <a href="/polyclinic/detail/<?= $pc['slug']; ?>" class="btn btn-info btn-sm " title="detail">
+                                            <i class="fa-solid fa-circle-info"></i>
+                                        </a>
+                                        &nbsp;
+
+                                        <!-- delete button -->
+                                        <form action="/polyclinic/delete/<?= $pc['id_poly'] ?>" method="post" style="display:inline;">
+                                            <?= csrf_field() ?>
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                <i class="fa fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+
+                                    </td>
+
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
                 <!-- /.card-body -->
 
             </div>
