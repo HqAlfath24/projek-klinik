@@ -21,6 +21,22 @@ $routes->get('/dashboard', 'Admin\Dashboard::index');
 
 
 
+// =============== queue ===============
+$routes->get('/queue', 'Admin\Queue::index');
+$routes->get('search', 'Admin\Queue::search');
+// =====
+$routes->post('/queue/save', 'Admin\Queue::save');
+$routes->post('/queue/search_patient', 'Admin\Queue::search_patient');
+$routes->post('/queue/search_polyclinic', 'Admin\Queue::search_patient');
+$routes->get('admin/queue/search_patient', 'Admin\Queue::search_patient');
+
+
+
+// =============== mrecord ===============
+$routes->get('/mrecord/check', 'Admin\Mrecord::check');
+
+
+
 // =============== dokter ===============
 $routes->get('/doctor', 'Admin\Dokter::index');
 $routes->get('/doctor/create', 'Admin\Dokter::create');

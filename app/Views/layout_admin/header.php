@@ -31,6 +31,11 @@
     <script src="https://kit.fontawesome.com/52bd79fc65.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/sweatalert2/sweetalert2.min.css">
     <script src="<?= base_url() ?>/plugins/sweatalert2/sweetalert2.all.min.js"></script>
+
+    <!--  -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
