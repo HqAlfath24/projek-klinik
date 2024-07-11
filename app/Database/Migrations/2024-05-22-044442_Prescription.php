@@ -11,7 +11,7 @@ class Prescription extends Migration
         $this->forge->addField([
             'id_prescription' => [  //id detail treatment
                 'type'           => 'VARCHAR',
-                'constraint'     => 11,
+                'constraint'     => '255',
                 // 'unsigned'       => true,
                 'auto_increment' => true,
             ],

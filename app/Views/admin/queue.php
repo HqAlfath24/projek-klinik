@@ -65,10 +65,10 @@
                         <?= csrf_field(); ?>
                         <div class="col-md-6 mb-3">
                             <label for="patient_id" class="form-label">Nama Pasien</label>
-                            <!-- <input type="text" class="form-control " id="patient_id" name="patient_id"> -->
-                            <select id="patient" name="patient_id" class="form-control" style="width: 100%;">
-                                <!-- Option will be loaded dynamically -->
-                            </select>
+                            <input type="text" class="form-control " id="patient_id" name="patient_id">
+                            <!-- <select id="patient" name="patient_id" class="form-control" style="width: 100%;"> -->
+                            <!-- Option will be loaded dynamically -->
+                            <!-- </select> -->
 
                         </div>
                         <div class="col-md-6 mb-3">
@@ -116,11 +116,19 @@
                                     <td><?= $v['poly_id']; ?></td>
                                     <td><?= $v['created_at']; ?></td>
                                     <td>
-                                        <!-- edit button -->
-                                        <a href="/mrecord/check" class="btn btn-warning btn-sm " title="check">
-                                            <i class="fa-solid fa-file-waveform" title="check"></i>
-                                        </a>
-                                        &nbsp;
+                                        <!-- check button -->
+                                        <form action="/mrecord/save" method="post" style="display:inline;">
+                                            <?= csrf_field() ?>
+                                            <input type="hidden" id="patient_id" name="patient_id" value="<?= $v['patient_id']; ?>">
+                                            <input type="hidden" id="poly_id" name="poly_id" value="<?= $v['poly_id']; ?>">
+
+
+
+                                            <button type="submit" class="btn btn-warning btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin memeriksa antrian pasien ini?');">
+                                                <i class="fa-solid fa-file-waveform" title="check"></i>
+                                            </button>
+                                        </form>
+
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

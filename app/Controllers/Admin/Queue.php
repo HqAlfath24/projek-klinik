@@ -58,6 +58,28 @@ class Queue extends BaseController
         return redirect()->to('/queue');
     }
 
+    public function check($id_visit)
+    {
+        $data = [
+            'title' => 'Home | Klinik Erins',
+            'menu' => 'home',
+            'submenu' => 'home',
+            'validation' => \Config\Services::validation(),
+            'visit' => $this->visitModel->getVisit($id_visit),
+            // 'patient' => $this->pasienModel->getPasien(),
+            // 'polyclinic' => $this->polyclinicModel->getPoly(),
+        ];
+
+
+        if (empty($data['visit'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException(
+                'Data Pemeriksaan ' . $id_visit . ' tidak ditemukan'
+            );
+        }
+        // dd($data);
+        return view('admin/check', $data);
+    }
+
     // PatientController.php
 
     // public function filterPatients()

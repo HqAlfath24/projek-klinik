@@ -12,40 +12,50 @@ class MRecord extends Migration
         $this->forge->addField([
             'id_mrecord'        => [
                 'type'           => 'VARCHAR',
-                'constraint'     => 11,
+                'constraint'     => '255',
                 // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'visit_id'       => [  //id kunjungan
-                'type'           => 'VARCHAR',
-                'constraint'     => 11,
-            ],
-            'emp_id'       => [  //id pegawai (perawat)
-                'type'           => 'VARCHAR',
-                'constraint'     => 11,
-            ],
+            // 'visit_id'       => [  //id kunjungan
+            //     'type'           => 'VARCHAR',
+            //     'constraint'     => '255',
+            // ],
             'patient_id'       => [
                 'type'           => 'VARCHAR',
-                'constraint'     => 11,
+                'constraint'     => '255',
+            ],
+            'poly_id'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '255',
             ],
             'doctor_id'        => [
                 'type'           => 'VARCHAR',
-                'constraint'     => 11,
+                'constraint'     => '255',
+                'null'           => true,
+            ],
+            'emp_id'       => [  //id pegawai (perawat)
+                'type'           => 'VARCHAR',
+                'constraint'     => '255',
+                'null'           => true,
             ],
             'complaint'        => [  //keluhan
                 'type'           => 'TEXT',
+                'null'           => true,
             ],
             'diagnosis'        => [  //diagnosa
                 'type'           => 'TEXT',
+                'null'           => true,
             ],
-            'treatment'        => [
-                'type'           => 'VARCHAR',
-                'constraint'     => 11,
-            ],
-            'prescription'     => [  //resep
-                'type'           => 'VARCHAR',
-                'constraint'     => 11,
-            ],
+            // 'treatment'        => [
+            //     'type'           => 'VARCHAR',
+            //     'constraint'     => '255',
+            //     'null'           => true,
+            // ],
+            // 'prescription'     => [  //resep
+            //     'type'           => 'VARCHAR',
+            //     'constraint'     => '255',
+            //     'null'           => true,
+            // ],
             'created_at'       => [
                 'type'           => 'TIMESTAMP',
                 'null'           => true,

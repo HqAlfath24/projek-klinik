@@ -11,7 +11,7 @@ class Obat extends Migration
         $this->forge->addField([
             'id_drug' => [
                 'type'           => 'VARCHAR',
-                'constraint'     => 11,
+                'constraint'     => '255',
                 // 'unsigned'       => true,
                 'auto_increment' => true,
             ],

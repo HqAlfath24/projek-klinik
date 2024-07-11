@@ -11,7 +11,7 @@ class Event extends Migration
         $this->forge->addField([
             'id_event'   => [  // id kunjungan
                 'type'           => 'VARCHAR',
-                'constraint'     => 11,
+                'constraint'     => '255',
                 // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
