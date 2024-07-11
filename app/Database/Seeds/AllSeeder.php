@@ -64,7 +64,7 @@ class AllSeeder extends Seeder
         }
 
         // drug
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $drug = $faker->name();
             $data = [
                 'id_drug' => $faker->unique()->uuid(),
@@ -107,7 +107,7 @@ class AllSeeder extends Seeder
         }
 
         // poly
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $poly = $faker->company();
             $data = [
                 'id_poly' => $faker->unique()->uuid(),
