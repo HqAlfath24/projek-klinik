@@ -64,21 +64,24 @@
                     <form class="row g-3" action="/queue/save" method="post">
                         <?= csrf_field(); ?>
                         <div class="col-md-6 mb-3">
-                            <label for="patient_id" class="form-label">Nama Pasien</label>
-                            <input type="text" class="form-control " id="patient_id" name="patient_id">
-                            <!-- <select id="patient" name="patient_id" class="form-control" style="width: 100%;"> -->
-                            <!-- Option will be loaded dynamically -->
-                            <!-- </select> -->
+                            <label for="patient_slug" class="form-label">Nama Pasien</label>
+                            <!-- <input type="text" class="form-control " id="patient_slug" name="patient_slug"> -->
+                            <select class="form-select form-select-sm" aria-label="Small select example" id="patient_slug" name="patient_slug">
+                                <option value="???" selected>Pilih Pasien</option>
+                                <?php foreach ($patient as $p) : ?>
+                                    <option value="<?= $p['slug']; ?>"><?= $p['name_patient']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
 
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="poly_id" class="form-label">Poli</label>
-                            <!-- <input type="text" class="form-control" id="poly_id" name="poly_id"> -->
+                            <label for="poly_code" class="form-label">Poli</label>
+                            <!-- <input type="text" class="form-control" id="poly_code" name="poly_code"> -->
                             <!--  -->
-                            <select class="form-select form-select-sm" aria-label="Small select example" id="poly_id" name="poly_id">
-                                <option selected>Pilih salah satu</option>
+                            <select class="form-select form-select-sm" aria-label="Small select example" id="poly_code" name="poly_code">
+                                <option value="???" selected>Pilih Poli</option>
                                 <?php foreach ($polyclinic as $pc) : ?>
-                                    <option value="<?= $pc['id_poly']; ?>"><?= $pc['name_poly']; ?></option>
+                                    <option value="<?= $pc['poly_code']; ?>"><?= $pc['name_poly']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -96,9 +99,9 @@
                         <thead>
                             <tr>
                                 <th style="width:5%;">NO</th>
-                                <th>Antrian</th>
-                                <th>Nama Paisen</th>
+                                <th>Nama Pasien</th>
                                 <th>Poli</th>
+                                <th>Antrian</th>
                                 <th>status</th>
 
                                 <th>Aksi</th>
@@ -108,26 +111,19 @@
 
 
                             <?php $i = 1; ?>
-                            <?php foreach ($visit as $v) : ?>
+                            <?php foreach ($mrecord as $mr) : ?>
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
-                                    <td><?= $v['id_visit']; ?></td>
-                                    <td><?= $v['patient_id']; ?></td>
-                                    <td><?= $v['poly_id']; ?></td>
-                                    <td><?= $v['created_at']; ?></td>
+                                    <td><?= $mr['patient_slug']; ?></td>
+                                    <td><?= $mr['poly_code']; ?></td>
+                                    <td><?= $mr['num_queue']; ?></td>
+                                    <td><?= $mr['created_at']; ?></td>
                                     <td>
                                         <!-- check button -->
-                                        <form action="/mrecord/save" method="post" style="display:inline;">
-                                            <?= csrf_field() ?>
-                                            <input type="hidden" id="patient_id" name="patient_id" value="<?= $v['patient_id']; ?>">
-                                            <input type="hidden" id="poly_id" name="poly_id" value="<?= $v['poly_id']; ?>">
 
-
-
-                                            <button type="submit" class="btn btn-warning btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin memeriksa antrian pasien ini?');">
-                                                <i class="fa-solid fa-file-waveform" title="check"></i>
-                                            </button>
-                                        </form>
+                                        <button type="submit" class="btn btn-warning btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin memeriksa antrian pasien ini?');">
+                                            <i class="fa-solid fa-file-waveform" title="check"></i>
+                                        </button>
 
                                     </td>
                                 </tr>
@@ -146,7 +142,7 @@
 </div>
 
 
-<!-- <script>
+<script>
     function hapus() {
         pesan = confirm('yakin data barang ini dihapus ?');
         if (pesan) {
@@ -155,7 +151,7 @@
             return false;
         }
     }
-</script> -->
+</script>
 
 
 <script>

@@ -16,17 +16,24 @@ class MRecord extends Migration
                 // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            // 'visit_id'       => [  //id kunjungan
+            // 'visit_id'       => [
             //     'type'           => 'VARCHAR',
             //     'constraint'     => '255',
+            //     'null'           => true,
             // ],
-            'patient_id'       => [
+            'patient_slug'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
             ],
-            'poly_id'       => [
+            'poly_code'       => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
+                'null'           => true,
+            ],
+            'num_queue'       => [  //no antrian
+                'type'           => 'VARCHAR',
+                'constraint'     => '255',
+                'null'           => true,
             ],
             'doctor_id'        => [
                 'type'           => 'VARCHAR',

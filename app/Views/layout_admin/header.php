@@ -112,6 +112,18 @@
                             </a>
                         </li>
 
+                        <!-- ANTRIAN -->
+                        <li class="nav-item">
+                            <a href="/queue" class="nav-link <?= $menu == 'home' ? 'active' : '' ?>">
+                                &nbsp;
+                                <i class="fa-solid fa-people-line"></i>
+                                &nbsp;&nbsp; <p>
+                                    Antrian
+                                    <!-- <i class="right fas fa-angle-down"></i> -->
+                                </p>
+                            </a>
+                        </li>
+
                         <!-- DAFTAR -->
                         <li class="nav-item">
                             <a href="/" class="nav-link <?= $menu == 'daftar' ? 'active' : '' ?>">

@@ -15,14 +15,17 @@ class AllSeeder extends Seeder
         // doctor
         for ($i = 0; $i < 10; $i++) {
             $doctor = $faker->name();
+            $key = url_title($doctor, '', true);
+            $email = $key . '@gmail.com';
             $data = [
                 'id_doctor' => $faker->unique()->uuid(),
-                'slug' => $doctor,
+                'slug' => $key,
                 'name_doctor' => $doctor,
                 // 'doctor_code' => $faker->unique()->randomNumber(),
                 // 'birthday' => $faker->date(),
                 // 'gender' => $faker->gender(), //pakai radio button
-                'email'    => $faker->email(),
+                // 'email'    => $faker->email(),
+                'email'    => $email,
                 'phone' => $faker->phoneNumber(),
                 'address' => $faker->address(),
                 'speciality' => $faker->company(),
@@ -40,14 +43,16 @@ class AllSeeder extends Seeder
         // emp
         for ($i = 0; $i < 10; $i++) {
             $emp = $faker->name();
+            $key = url_title($emp, '', true);
+            $email = $key . '@gmail.com';
             $data = [
                 'id_emp' => $faker->unique()->uuid(),
-                'slug' => $emp,
+                'slug' => $key,
                 'name_emp' => $emp,
                 // 'doctor_code' => $faker->unique()->randomNumber(),
                 'birthday' => $faker->date(),
                 // 'gender' => $faker->gender(), //pakai radio button
-                'email'    => $faker->email(),
+                'email'    => $email,
                 'phone' => $faker->phoneNumber(),
                 'address' => $faker->address(),
                 // 'speciality' => $faker->company(),
@@ -66,9 +71,10 @@ class AllSeeder extends Seeder
         // drug
         for ($i = 0; $i < 10; $i++) {
             $drug = $faker->name();
+            $key = url_title($drug, '', true);
             $data = [
                 'id_drug' => $faker->unique()->uuid(),
-                'slug' => $drug,
+                'slug' => $key,
                 'name_drug' => $drug,
                 'reg_num' => $faker->unique()->randomNumber(),
                 'produsen'    => $faker->company(),
@@ -86,15 +92,17 @@ class AllSeeder extends Seeder
         // patien
         for ($i = 0; $i < 10; $i++) {
             $patient = $faker->name();
+            $key = url_title($patient, '', true);
+            $email = $key . '@gmail.com';
             $data = [
                 'id_patient' => $faker->unique()->uuid(),
                 'mrecord_num' => $faker->unique()->randomNumber(),
-                'slug' => $patient,
+                'slug' => $key,
                 'name_patient' => $patient,
                 'birthday' => $faker->date(),
                 // 'gender' => $faker->gender(), //pakai radio button
                 'phone' => $faker->phoneNumber(),
-                'email'    => $faker->email(),
+                'email'    => $email,
                 'address' => $faker->address(),
                 // 'badge' => $faker->name(), //dihapus ganti NIK
                 'no_badge' => $faker->nik(),
@@ -109,11 +117,12 @@ class AllSeeder extends Seeder
         // poly
         for ($i = 0; $i < 10; $i++) {
             $poly = $faker->company();
+            $key = url_title($poly, '', true);
             $data = [
                 'id_poly' => $faker->unique()->uuid(),
-                'slug' => $poly,
+                'slug' => $key,
                 'name_poly' => $poly,
-                'poly_code' => $faker->unique()->randomNumber(),
+                'poly_code' => $faker->unique()->randomAscii(),
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
             ];

@@ -7,22 +7,20 @@ use Ramsey\Uuid\Uuid;
 
 class MrecordModel extends Model
 {
-    protected $table      = 'mrecord';
+    protected $table      = 'mrecords';
     protected $primaryKey      = 'id_mrecord';
     protected $useTimestamps = true;
 
 
     protected $allowedFields = [
         'id_mrecord',
-        'visit_id',
-        'patient_id',
-        'poly_id',
+        'patient_slug',
+        'poly_code',
+        'num_queue',
         'doctor_id',
         'emp_id',
         'complaint',
         'diagnosis',
-        'treadment',
-        'prescription',
     ];
 
     protected $beforeInsert = ['generateUUID'];
@@ -36,7 +34,7 @@ class MrecordModel extends Model
         return $data;
     }
 
-    public function getPoly($id_mrecord = false)
+    public function getMrecord($id_mrecord = false)
     {
         if ($id_mrecord == false) {
             return $this->findAll();
