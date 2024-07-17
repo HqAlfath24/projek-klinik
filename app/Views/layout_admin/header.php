@@ -137,7 +137,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/drug" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
+                                    <a href="/medicine" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Obat</p>
                                     </a>

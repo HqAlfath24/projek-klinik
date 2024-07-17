@@ -44,7 +44,7 @@
                     + Tambah Data
                 </a>
 
-                <a href="/drug/create" class="btn btn-primary btn-sm mb-3">
+                <a href="/medicine/create" class="btn btn-primary btn-sm mb-3">
                     + Tambah Obat
                 </a>
 
@@ -126,36 +126,36 @@
                     <tbody>
 
                         <?php $i = 1; ?>
-                        <?php foreach ($drug as $d) : ?>
+                        <?php foreach ($medicine as $mdc) : ?>
                             <tr>
                                 <th scope="row"><?= $i++; ?></th>
-                                <td><?= $d['slug']; ?></td>
-                                <td><?= $d['name_drug']; ?></td>
-                                <td><?= $d['reg_num']; ?></td>
-                                <td><?= $d['produsen']; ?></td>
-                                <td><?= $d['distributor']; ?></td>
-                                <td><?= $d['stok']; ?></td>
-                                <td><?= $d['expired']; ?></td>
-                                <td><?= $d['unit_price']; ?></td>
-                                <td><?= $d['composition']; ?></td>
-                                <td><?= $d['created_at']; ?></td>
-                                <td><?= $d['updated_at']; ?></td>
+                                <td><?= $mdc['slug']; ?></td>
+                                <td><?= $mdc['name_medicine']; ?></td>
+                                <td><?= $mdc['reg_num']; ?></td>
+                                <td><?= $mdc['produsen']; ?></td>
+                                <td><?= $mdc['distributor']; ?></td>
+                                <td><?= $mdc['stok']; ?></td>
+                                <td><?= $mdc['expired']; ?></td>
+                                <td><?= $mdc['unit_price']; ?></td>
+                                <td><?= $mdc['composition']; ?></td>
+                                <td><?= $mdc['created_at']; ?></td>
+                                <td><?= $mdc['updated_at']; ?></td>
 
                                 <td>
                                     <!-- edit button -->
-                                    <a href="/drug/edit/<?= $d['slug']; ?>" class="btn btn-warning btn-sm " title="edit">
+                                    <a href="/medicine/edit/<?= $mdc['slug']; ?>" class="btn btn-warning btn-sm " title="edit">
                                         <i class="fa fa-edit" title="Edit"></i>
                                     </a>
                                     &nbsp;
 
                                     <!-- detai button -->
-                                    <a href="/drug/detail/<?= $d['slug']; ?>" class="btn btn-info btn-sm " title="detail">
+                                    <a href="/medicine/detail/<?= $mdc['slug']; ?>" class="btn btn-info btn-sm " title="detail">
                                         <i class="fa-solid fa-circle-info"></i>
                                     </a>
                                     &nbsp;
 
                                     <!-- delete button -->
-                                    <form action="/drug/delete/<?= $d['id_drug'] ?>" method="post" style="display:inline;">
+                                    <form action="/medicine/delete/<?= $mdc['id_medicine'] ?>" method="post" style="display:inline;">
                                         <?= csrf_field() ?>
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-danger btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">

@@ -9,7 +9,7 @@ class Obat extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_drug' => [
+            'id_medicine' => [
                 'type'           => 'VARCHAR',
                 'constraint'     => '255',
                 // 'unsigned'       => true,
@@ -19,7 +19,7 @@ class Obat extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'name_drug' => [
+            'name_medicine' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -65,12 +65,12 @@ class Obat extends Migration
                 'null'       => TRUE,
             ],
         ]);
-        $this->forge->addKey('id_drug', true);
-        $this->forge->createTable('drug');
+        $this->forge->addKey('id_medicine', true);
+        $this->forge->createTable('medicine');
     }
 
     public function down()
     {
-        $this->forge->dropTable('drug');
+        $this->forge->dropTable('medicine');
     }
 }

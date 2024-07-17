@@ -82,6 +82,7 @@ class Queue extends BaseController
             'validation' => \Config\Services::validation(),
 
             'mrecord' => $this->mrecordModel->getMrecord($id_mrecord),
+            'medicine ' => $this->polyclinicModel->getPoly(),
         ];
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
         return view('admin/check', $data);

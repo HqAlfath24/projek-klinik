@@ -5,16 +5,16 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Ramsey\Uuid\Uuid;
 
-class ObatModel extends Model
+class MedicineModel extends Model
 {
-    protected $table      = 'drug';
-    protected $primaryKey      = 'id_drug';
+    protected $table      = 'medicine';
+    protected $primaryKey      = 'id_medicine';
     protected $useTimestamps = true;
 
     protected $allowedFields = [
-        'id_drug',
+        'id_medicine',
         'slug',
-        'name_drug',
+        'name_medicine',
         'reg_num',
         'produsen',
         'distributor',
@@ -31,11 +31,11 @@ class ObatModel extends Model
 
     protected function generateUUID(array $data)
     {
-        $data['data']['id_drug'] = Uuid::uuid4()->toString();
+        $data['data']['id_medicine'] = Uuid::uuid4()->toString();
         return $data;
     }
 
-    public function getObat($slug = false)
+    public function getMedicine($slug = false)
     {
         if ($slug == false) {
             return $this->findAll();

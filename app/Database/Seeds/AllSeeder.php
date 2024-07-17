@@ -68,14 +68,14 @@ class AllSeeder extends Seeder
             $this->db->table('employee')->insert($data);
         }
 
-        // drug
+        // medicine 
         for ($i = 0; $i < 10; $i++) {
-            $drug = $faker->name();
-            $key = url_title($drug, '', true);
+            $medicine = $faker->name();
+            $key = url_title($medicine, '', true);
             $data = [
-                'id_drug' => $faker->unique()->uuid(),
+                'id_medicine' => $faker->unique()->uuid(),
                 'slug' => $key,
-                'name_drug' => $drug,
+                'name_medicine' => $medicine,
                 'reg_num' => $faker->unique()->randomNumber(),
                 'produsen'    => $faker->company(),
                 'distributor' => $faker->company(),
@@ -86,7 +86,7 @@ class AllSeeder extends Seeder
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
             ];
-            $this->db->table('drug')->insert($data);
+            $this->db->table('medicine')->insert($data);
         }
 
         // patien

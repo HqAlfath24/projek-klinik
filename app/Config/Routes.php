@@ -68,14 +68,14 @@ $routes->delete('employee/delete/(:segment)', 'Admin\Employee::delete/$1');
 
 
 // =============== obat ===============
-$routes->get('/drug', 'Admin\Obat::index');
-$routes->get('/drug/create', 'Admin\Obat::create');
-$routes->get('/drug/detail/(:segment)', 'Admin\Obat::detail/$1');
-$routes->get('/drug/edit/(:segment)', 'Admin\Obat::edit/$1');
+$routes->get('/medicine', 'Admin\Medicine::index');
+$routes->get('/medicine/create', 'Admin\Medicine::create');
+$routes->get('/medicine/detail/(:segment)', 'Admin\Medicine::detail/$1');
+$routes->get('/medicine/edit/(:segment)', 'Admin\Medicine::edit/$1');
 // =====
-$routes->post('/drug/save', 'Admin\Obat::save');
-$routes->post('/drug/update/(:segment)', 'Admin\Obat::update/$1');
-$routes->delete('drug/delete/(:segment)', 'Admin\Obat::delete/$1');
+$routes->post('/medicine/save', 'Admin\Medicine::save');
+$routes->post('/medicine/update/(:segment)', 'Admin\Medicine::update/$1');
+$routes->delete('medicine/delete/(:segment)', 'Admin\Medicine::delete/$1');
 
 
 
