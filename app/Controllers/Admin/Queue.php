@@ -35,20 +35,6 @@ class Queue extends BaseController
         return view('admin/queue', $data);
     }
 
-    // public function create()
-    // {
-    //     // session();
-    //     $data = [
-    //         'title' => 'Form Tambah Daftar Poli | Klinik Erins',
-    //         'menu' => 'Tambah Obat',
-    //         'submenu' => 'sub5',
-    //         'validation' => \Config\Services::validation(),
-    //     ];
-    //     // no page
-    //     // dd($data);
-    //     return view('admin/daftar/polyclinic/add', $data);
-    // }
-
     public function save()
     {
         if (!$this->validate([
@@ -61,10 +47,21 @@ class Queue extends BaseController
             // return redirect()->to('/queue')->withInput()->with('validation', $validation);
         }
 
+        // Mendapatkan nomor antrian terakhir untuk poli yang dipilih
+        $last_queue = $this->mrecordModel->where('poly_code', $this->request->getVar('poly_code'))
+            ->orderBy('num_queue', 'DESC')
+            ->first();
+        $new_queue = $last_queue ? $last_queue['num_queue'] + 1 : 1;
+
+        // Menyimpan data antrian baru ke dalam database
+        $formatted_queue_num = str_pad($new_queue, 3, '0', STR_PAD_LEFT);
+        $status = 'pending';
 
         $this->mrecordModel->save([
             'patient_slug' => $this->request->getVar('patient_slug'),
             'poly_code' => $this->request->getVar('poly_code'),
+            'num_queue' => $formatted_queue_num,
+            'status' => $status,
         ]);
 
         // dd($this->request->getVar());
@@ -74,16 +71,21 @@ class Queue extends BaseController
         return redirect()->to('/queue');
     }
 
-    // public function detail($slug)
-    // {
+    public function check($id_mrecord)
+    {
 
-    //     $data = [
-    //         // 'title' => 'Daftar Pasien | Klinik Erins', //sesuaikan saja wkwkk
-    //         'polyclinic' => $this->polyclinicModel->getPoly($slug),
-    //     ];
-    //     // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
-    //     return view('admin/daftar/polyclinic/detail', $data);
-    // }
+        $data = [
+            'title' => 'Data Pasien Pasien | Klinik Erins',
+            'subtitle' => 'Permeriksaan Pasien',
+            'menu' => 'daftar periksa',
+            'submenu' => 'sub5',
+            'validation' => \Config\Services::validation(),
+
+            'mrecord' => $this->mrecordModel->getMrecord($id_mrecord),
+        ];
+        // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
+        return view('admin/check', $data);
+    }
 
     // public function edit_poly()
     // {

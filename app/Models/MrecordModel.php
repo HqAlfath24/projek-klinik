@@ -21,6 +21,8 @@ class MrecordModel extends Model
         'emp_id',
         'complaint',
         'diagnosis',
+        'notes',
+        'status',
     ];
 
     protected $beforeInsert = ['generateUUID'];
@@ -34,12 +36,21 @@ class MrecordModel extends Model
         return $data;
     }
 
+    // daftar antrian
     public function getMrecord($id_mrecord = false)
     {
         if ($id_mrecord == false) {
-            return $this->findAll();
+            return $this->where('status', 'pending')->orderBy('created_at', 'ASC')->findAll();
         }
 
         return $this->where(['id_mrecord' => $id_mrecord])->first();
+    }
+
+    // nomor antrian
+    public function getLastQueue($poli_code)
+    {
+        return $this->where('poli_code', $poli_code)
+            ->orderBy('nomor_antrian', 'DESC')
+            ->first();
     }
 }

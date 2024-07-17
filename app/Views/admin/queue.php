@@ -117,11 +117,11 @@
                                     <td><?= $mr['patient_slug']; ?></td>
                                     <td><?= $mr['poly_code']; ?></td>
                                     <td><?= $mr['num_queue']; ?></td>
-                                    <td><?= $mr['created_at']; ?></td>
+                                    <td><?= $mr['status']; ?></td>
                                     <td>
                                         <!-- check button -->
 
-                                        <button type="submit" class="btn btn-warning btn-sm " title="Hapus" onclick="return confirm('Apakah Anda yakin ingin memeriksa antrian pasien ini?');">
+                                        <button type="submit" class="btn btn-warning btn-sm " title="Hapus" onclick="confirmCheck('/queue/check/<?= $mr['id_mrecord']; ?>');">
                                             <i class="fa-solid fa-file-waveform" title="check"></i>
                                         </button>
 
@@ -142,7 +142,7 @@
 </div>
 
 
-<script>
+<!-- <script>
     function hapus() {
         pesan = confirm('yakin data barang ini dihapus ?');
         if (pesan) {
@@ -151,10 +151,17 @@
             return false;
         }
     }
-</script>
-
+</script> -->
 
 <script>
+    function confirmCheck(url) {
+        if (confirm('Apakah Anda yakin ingin memeriksa antrian pasien ini?')) {
+            window.location.href = url;
+        }
+    }
+</script>
+
+<!-- <script>
     $(document).ready(function() {
         $('#search').on('input', function() {
             var query = $(this).val();
@@ -241,5 +248,5 @@
             }
         });
     });
-</script>
+</script> -->
 <?php echo view('layout_admin/footer'); ?>

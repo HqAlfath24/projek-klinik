@@ -23,7 +23,7 @@ $routes->get('/dashboard', 'Admin\Dashboard::index');
 
 // =============== queue ===============
 $routes->get('/queue', 'Admin\Queue::index');
-// $routes->get('/queue/check/(:segment)', 'Admin\Queue::check/$1');
+$routes->get('/queue/check/(:segment)', 'Admin\Queue::check/$1');
 // $routes->get('search', 'Admin\Queue::search');
 // // =====
 $routes->post('/queue/save', 'Admin\Queue::save');
@@ -39,7 +39,7 @@ $routes->post('/queue/save', 'Admin\Queue::save');
 // $routes->get('/mrecord/check', 'Admin\Mrecord::check');
 // // =====
 // $routes->post('/mrecord/proses', 'Admin\Mrecord::proses');
-// $routes->post('/mrecord/diagnosis', 'Admin\Mrecord::diagnosis');
+$routes->post('/mrecord/diagnosis/(:segment)', 'Admin\Mrecord::diagnosis/$1');
 
 
 

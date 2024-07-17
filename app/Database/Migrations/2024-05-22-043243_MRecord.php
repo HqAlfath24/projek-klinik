@@ -53,6 +53,15 @@ class MRecord extends Migration
                 'type'           => 'TEXT',
                 'null'           => true,
             ],
+            'notes'        => [  //diagnosa
+                'type'           => 'TEXT',
+                'null'           => true,
+            ],
+            'status'       => [
+                'type'           => 'VARCHAR',
+                'constraint'     => '255',
+                'null'           => true,
+            ],
             // 'treatment'        => [
             //     'type'           => 'VARCHAR',
             //     'constraint'     => '255',
