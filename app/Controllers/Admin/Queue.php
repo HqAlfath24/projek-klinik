@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
+use App\Models\MedicineModel;
 use App\Models\MrecordModel;
 use App\Models\PasienModel;
 use App\Models\PolyclinicModel;
@@ -12,11 +13,14 @@ class Queue extends BaseController
     protected $patientModel;
     protected $polyclinicModel;
     protected $mrecordModel;
+    protected $medicineModel;
+
     public function __construct()
     {
         $this->patientModel = new PasienModel();
         $this->polyclinicModel = new PolyclinicModel();
         $this->mrecordModel = new MrecordModel();
+        $this->medicineModel = new MedicineModel();
     }
 
     public function index()
@@ -82,7 +86,7 @@ class Queue extends BaseController
             'validation' => \Config\Services::validation(),
 
             'mrecord' => $this->mrecordModel->getMrecord($id_mrecord),
-            'medicine ' => $this->polyclinicModel->getPoly(),
+            'medicines' => $this->medicineModel->getMedicine(),
         ];
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
         return view('admin/check', $data);

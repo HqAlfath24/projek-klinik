@@ -40,10 +40,13 @@
             </div>
 
             <!-- prescription -->
-            <div id="medicinesContainer">
-                <!-- Medicine inputs will be appended here dynamically -->
+            <h5>Resep</h5>
+            <div>
+                <button type="button" class="btn btn-secondary mb-3" onclick="addMedicine()">Tambah Obat</button>
+                <div id="medicinesContainer">
+                    <!-- Medicine inputs will be appended here dynamically -->
+                </div>
             </div>
-            <button type="button" class="btn btn-secondary mb-3" onclick="addMedicine()">Tambah Obat</button>
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -51,19 +54,25 @@
 </div>
 
 
-<!-- add drug -->
+<!-- script add medicine -->
 <script>
+    // Fungsi untuk menambah input obat baru ke dalam form
     function addMedicine() {
+        // Mendapatkan container tempat input obat akan ditambahkan
         var container = document.getElementById('medicinesContainer');
+        // Mendapatkan jumlah elemen anak dalam container untuk menentukan index baru
         var index = container.childElementCount;
 
+        // Membuat div baru untuk input obat
         var medicineDiv = document.createElement('div');
         medicineDiv.className = 'medicine-item mb-3';
         medicineDiv.innerHTML = `
                 <label for="medicine_id_${index}" class="form-label">Nama Obat</label>
                 <select name="medicines[${index}][medicine_id]" id="medicine_id_${index}" class="form-control mb-2">
                     <?php foreach ($medicines as $medicine) : ?>
-                        <option value="<?= $medicine['id'] ?>"><?= $medicine['name'] ?> - <?= $medicine['dosage_form'] ?> - <?= $medicine['strength'] ?></option>
+                        <option value="<?= $medicine['id_medicine'] ?>">
+                            <?= $medicine['name_medicine'] ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
                 <label for="dosage_${index}" class="form-label">Dosis</label>
@@ -74,11 +83,15 @@
                 <hr>
             `;
 
+        // Menambahkan div baru ke dalam container
         container.appendChild(medicineDiv);
     }
 
+    // Fungsi untuk menghapus input obat dari form
     function removeMedicine(button) {
+        // Mendapatkan container tempat input obat berada
         var container = document.getElementById('medicinesContainer');
+        // Menghapus elemen parent dari tombol hapus (div yang mengandung input obat)
         container.removeChild(button.parentNode);
     }
 </script>
