@@ -83,4 +83,19 @@ class Mrecord extends BaseController
 
         return redirect()->to('/queue');
     }
+
+    public function printQueue($id_mrecord)
+    {
+        $mrecord = $this->mrecordModel->find($id_mrecord);
+        $patient = $this->patientModel->find($mrecord['patient_id']);
+        $polyclinic = $this->polyclinicModel->find($mrecord['poly_id']);
+
+        $data = [
+            'mrecord' => $mrecord,
+            'patient' => $patient,
+            'polyclinic' => $polyclinic,
+        ];
+
+        return view('admin/print_queue', $data);
+    }
 }

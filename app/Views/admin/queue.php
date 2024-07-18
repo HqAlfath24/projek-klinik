@@ -118,6 +118,9 @@
                                     <td><?= $mr['status']; ?></td>
                                     <td>
                                         <!-- check button -->
+                                        <button class="btn btn-primary btn-sm" onclick="printQueue(<?= $mr['id_mrecord']; ?>)">
+                                            <i class="fa-solid fa-print" title="print"></i>
+                                        </button>
 
                                         <button type="submit" class="btn btn-warning btn-sm " title="Hapus" onclick="confirmCheck('/queue/check/<?= $mr['id_mrecord']; ?>');">
                                             <i class="fa-solid fa-file-waveform" title="check"></i>
@@ -151,6 +154,7 @@
     }
 </script> -->
 
+<!-- cek konfirmasi periksa -->
 <script>
     function confirmCheck(url) {
         if (confirm('Apakah Anda yakin ingin memeriksa antrian pasien ini?')) {
@@ -159,92 +163,12 @@
     }
 </script>
 
-<!-- <script>
-    $(document).ready(function() {
-        $('#search').on('input', function() {
-            var query = $(this).val();
-            if (query.length > 0) {
-                $.ajax({
-                    url: '/search',
-                    method: 'POST',
-                    data: {
-                        query: query
-                    },
-                    success: function(data) {
-                        $('#result').empty();
-                        data.forEach(function(item) {
-                            $('#result').append('<li>' + item.column_name + '</li>'); // Ganti 'column_name' dengan kolom yang sesuai
-                        });
-                    }
-                });
-            } else {
-                $('#result').empty();
-            }
-        });
-    });
+<!-- cetak no antrian -->
+<script>
+    function printQueue(id) {
+        var url = "/mrecord/printQueue/" + id;
+        window.open(url, '_blank');
+    }
 </script>
 
-<script>
-    $(function() {
-        $("#patient-name").autocomplete({
-            source: function(request, response) {
-                $.ajax({
-                    url: "<?= base_url('search') ?>",
-                    dataType: "json",
-                    data: {
-                        q: request.term
-                    },
-                    success: function(data) {
-                        response(data);
-                    }
-                });
-            },
-            minLength: 2
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function() {
-        $('#patient').select2({
-            placeholder: 'Select a patient',
-            ajax: {
-                url: '<?= base_url('admin/queue/search_patient') ?>',
-                dataType: 'json',
-                delay: 250,
-                processResults: function(data) {
-                    return {
-                        results: $.map(data, function(item) {
-                            return {
-                                text: item.name_patient,
-                                id: item.id_patient
-                            }
-                        })
-                    };
-                },
-                cache: true
-            }
-        });
-
-        $('#poly').select2({
-            placeholder: 'Select a polyclinic',
-            ajax: {
-                url: '<?= base_url('admin/queue/search_polyclinic') ?>',
-                dataType: 'json',
-                delay: 250,
-                processResults: function(data) {
-                    return {
-                        results: $.map(data, function(item) {
-                            return {
-                                text: item.name_poly,
-                                id: item.id_poly
-                            }
-                        })
-                    };
-                },
-                cache: true
-            }
-        });
-    });
-</script> -->
 <?php echo view('layout_admin/footer'); ?>
