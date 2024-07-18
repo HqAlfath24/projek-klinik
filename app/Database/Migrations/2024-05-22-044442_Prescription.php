@@ -31,23 +31,27 @@ class Prescription extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'drug_id' => [
+            'patient_slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'amount' => [  //jumlah
-                'type'       => 'INT',
-                'constraint' => '255',
-            ],
-            'dose' => [  //dosis
-                'type'       => 'INT',
-                'constraint' => '255',
-            ],
-            'frequency' => [  //frekuensi
+            'medicine_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'information' => [  //informasi
+            'name_medicine' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'quantity' => [  //jumlah
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'dosage' => [  //dosis
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'instructions' => [  //frekuensi
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],

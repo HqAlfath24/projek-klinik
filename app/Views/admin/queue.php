@@ -52,9 +52,7 @@
                     + Tambah Poli
                 </a> -->
 
-                <div class="card" id="chart">
-                    <!-- <canvas id="chLine"></canvas> -->
-                </div>
+
 
 
 

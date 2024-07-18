@@ -15,8 +15,10 @@ class PrescriptionModel extends Model
     protected $allowedFields = [
         'id_prescription',
         'mrecord_id',
+        'patient_slug',
+        'medicine_id',
         'name_medicine',
-        'amount',
+        'quantity',
         'dosage',
         'instructions',
     ];

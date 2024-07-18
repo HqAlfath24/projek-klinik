@@ -26,17 +26,17 @@
             <!-- check & diagnosis -->
             <div class="mb-3">
                 <label for="complaint" class="form-label">Keluhan</label>
-                <input type="text" class="form-control " id="complaint" name="complaint" autofocus value="<?= old('complaint'); ?>">
+                <input type="textarea" class="form-control " id="complaint" name="complaint" autofocus value="<?= old('complaint'); ?>">
             </div>
             <div class="mb-3">
                 <label for="diagnosis" class="form-label">Diagnosa</label>
                 <!-- <input type="text" class="form-control" id="diagnosis" name="diagnosis"> -->
-                <input type="text" class="form-control" id="diagnosis" name="diagnosis" value="<?= old('diagnosis'); ?>">
+                <input type="textarea" class="form-control" id="diagnosis" name="diagnosis" value="<?= old('diagnosis'); ?>">
             </div>
             <div class="mb-3">
                 <label for="notes" class="form-label">Catatan</label>
                 <!-- <input type="text" class="form-control" id="notes" name="notes"> -->
-                <input type="text" class="form-control" id="notes" name="notes" value="<?= old('notes'); ?>">
+                <input type="textarea" class="form-control" id="notes" name="notes" value="<?= old('notes'); ?>">
             </div>
 
             <!-- prescription -->
@@ -58,40 +58,53 @@
 <script>
     // Fungsi untuk menambah input obat baru ke dalam form
     function addMedicine() {
-        // Mendapatkan container tempat input obat akan ditambahkan
         var container = document.getElementById('medicinesContainer');
-        // Mendapatkan jumlah elemen anak dalam container untuk menentukan index baru
         var index = container.childElementCount;
 
-        // Membuat div baru untuk input obat
         var medicineDiv = document.createElement('div');
         medicineDiv.className = 'medicine-item mb-3';
         medicineDiv.innerHTML = `
                 <label for="medicine_id_${index}" class="form-label">Nama Obat</label>
-                <select name="medicines[${index}][medicine_id]" id="medicine_id_${index}" class="form-control mb-2">
-                    <?php foreach ($medicines as $medicine) : ?>
-                        <option value="<?= $medicine['id_medicine'] ?>">
-                            <?= $medicine['name_medicine'] ?>
+                <select name="medicines[${index}][medicine_id]" id="medicine_id_${index}" class="form-control mb-2" onchange="setMedicineName(this, ${index})">
+                    <option value="">-- Pilih Obat --</option>
+                    <?php foreach ($medicines as $mdc) : ?>
+                        <option value="<?= $mdc['id_medicine'] ?>">
+                            <?= $mdc['name_medicine'] ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
+
+                <input type="hidden" name="medicines[${index}][name_medicine]" id="name_medicine_${index}">
+
+
                 <label for="dosage_${index}" class="form-label">Dosis</label>
                 <input type="text" class="form-control mb-2" id="dosage_${index}" name="medicines[${index}][dosage]" value="">
+
+
+                <label for="quantity_${index}" class="form-label">Jumlah</label>
+                <input type="number" class="form-control mb-2" id="quantity_${index}" name="medicines[${index}][quantity]" placeholder="10" min="1">
+
+
                 <label for="instructions_${index}" class="form-label">Instruksi</label>
                 <textarea class="form-control mb-2" id="instructions_${index}" name="medicines[${index}][instructions]"></textarea>
+
                 <button type="button" class="btn btn-danger" onclick="removeMedicine(this)">Hapus Obat</button>
                 <hr>
             `;
 
-        // Menambahkan div baru ke dalam container
         container.appendChild(medicineDiv);
     }
 
     // Fungsi untuk menghapus input obat dari form
     function removeMedicine(button) {
-        // Mendapatkan container tempat input obat berada
         var container = document.getElementById('medicinesContainer');
-        // Menghapus elemen parent dari tombol hapus (div yang mengandung input obat)
         container.removeChild(button.parentNode);
+    }
+
+    // Fungsi untuk mengatur nama obat berdasarkan pilihan di select
+    function setMedicineName(select, index) {
+        var option = select.options[select.selectedIndex];
+        var medicineNameInput = document.getElementById('name_medicine_' + index);
+        medicineNameInput.value = option.text.split(' - ')[0];
     }
 </script>

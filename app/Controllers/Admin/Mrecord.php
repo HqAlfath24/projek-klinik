@@ -6,17 +6,20 @@ use App\Controllers\BaseController;
 use App\Models\MrecordModel;
 use App\Models\PasienModel;
 use App\Models\PolyclinicModel;
+use App\Models\PrescriptionModel;
 
 class Mrecord extends BaseController
 {
     protected $patientModel;
     protected $polyclinicModel;
     protected $mrecordModel;
+    protected $prescriptionModel;
     public function __construct()
     {
         $this->patientModel = new PasienModel();
         $this->polyclinicModel = new PolyclinicModel();
         $this->mrecordModel = new MrecordModel();
+        $this->prescriptionModel = new PrescriptionModel();
     }
 
     // public function index()
@@ -48,6 +51,7 @@ class Mrecord extends BaseController
             // return redirect()->to('/queue')->withInput()->with('validation', $validation);
         }
 
+        // kirim data ke mrecord
         $status = 'periksa';
         $this->mrecordModel->save([
             'id_mrecord' => $id_mrecord,
@@ -58,6 +62,20 @@ class Mrecord extends BaseController
             'notes' => $this->request->getVar('notes'),
             'status' => $status,
         ]);
+
+        // kirim data ke prescription
+        $medicines = $this->request->getVar('medicines');
+        foreach ($medicines as $mdc) {
+            $this->prescriptionModel->save([
+                'mrecord_id' => $id_mrecord,
+                'patient_slug' => $this->request->getVar('patient_slug'),
+                'medicine_id' => $mdc['medicine_id'],
+                'name_medicine' => $mdc['name_medicine'],
+                'quantity' => $mdc['quantity'],
+                'dosage' => $mdc['dosage'],
+                'instructions' => $mdc['instructions'],
+            ]);
+        }
 
         // dd($this->request->getVar());
 
