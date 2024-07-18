@@ -47,8 +47,8 @@ class Employee extends BaseController
             'phone' => 'required|is_unique[employee.phone]',
         ])) {
             $validation = \Config\Services::validation();
-            // dd($validation);
-            return redirect()->to('/employee/create')->withInput()->with('validation', $validation);
+            dd($validation);
+            // return redirect()->to('/employee/create')->withInput()->with('validation', $validation);
         }
 
         $slug = url_title($this->request->getVar('name_emp'), '-', true);

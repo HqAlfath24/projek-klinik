@@ -33,11 +33,11 @@
 
             <div class="card-body">
                 <?= $validation->listErrors(); ?>
-                <form action="/drug/save" method="post">
+                <form action="/medicine/save" method="post">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="name_drug" class="form-label">Nama</label>
-                        <input type="text" class="form-control " id="name_drug" name="name_drug" autofocus value="<?= old('name_drug'); ?>">
+                        <label for="name_medicine" class="form-label">Nama</label>
+                        <input type="text" class="form-control " id="name_medicine" name="name_medicine" autofocus value="<?= old('name_medicine'); ?>">
                     </div>
                     <div class="mb-3">
                         <label for="reg_num" class="form-label">No. Regristrasi </label>

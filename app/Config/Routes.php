@@ -21,6 +21,28 @@ $routes->get('/dashboard', 'Admin\Dashboard::index');
 
 
 
+// =============== queue ===============
+$routes->get('/queue', 'Admin\Queue::index');
+$routes->get('/queue/check/(:segment)', 'Admin\Queue::check/$1');
+// $routes->get('search', 'Admin\Queue::search');
+// // =====
+$routes->post('/queue/save', 'Admin\Queue::save');
+// $routes->post('/queue/search_patient', 'Admin\Queue::search_patient');
+// $routes->post('/queue/search_polyclinic', 'Admin\Queue::search_patient');
+
+// $routes->get('admin/queue/search_patient', 'Admin\Queue::search_patient');
+
+
+
+// =============== mrecord ===============
+// $routes->get('/mrecord/check/(:segment)', 'Admin\Mrecord::check/$1');
+// $routes->get('/mrecord/check', 'Admin\Mrecord::check');
+// // =====
+// $routes->post('/mrecord/proses', 'Admin\Mrecord::proses');
+$routes->post('/mrecord/diagnosis/(:segment)', 'Admin\Mrecord::diagnosis/$1');
+
+
+
 // =============== dokter ===============
 $routes->get('/doctor', 'Admin\Dokter::index');
 $routes->get('/doctor/create', 'Admin\Dokter::create');
@@ -46,14 +68,14 @@ $routes->delete('employee/delete/(:segment)', 'Admin\Employee::delete/$1');
 
 
 // =============== obat ===============
-$routes->get('/drug', 'Admin\Obat::index');
-$routes->get('/drug/create', 'Admin\Obat::create');
-$routes->get('/drug/detail/(:segment)', 'Admin\Obat::detail/$1');
-$routes->get('/drug/edit/(:segment)', 'Admin\Obat::edit/$1');
+$routes->get('/medicine', 'Admin\Medicine::index');
+$routes->get('/medicine/create', 'Admin\Medicine::create');
+$routes->get('/medicine/detail/(:segment)', 'Admin\Medicine::detail/$1');
+$routes->get('/medicine/edit/(:segment)', 'Admin\Medicine::edit/$1');
 // =====
-$routes->post('/drug/save', 'Admin\Obat::save');
-$routes->post('/drug/update/(:segment)', 'Admin\Obat::update/$1');
-$routes->delete('drug/delete/(:segment)', 'Admin\Obat::delete/$1');
+$routes->post('/medicine/save', 'Admin\Medicine::save');
+$routes->post('/medicine/update/(:segment)', 'Admin\Medicine::update/$1');
+$routes->delete('medicine/delete/(:segment)', 'Admin\Medicine::delete/$1');
 
 
 

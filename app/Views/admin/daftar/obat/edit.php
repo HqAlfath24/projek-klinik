@@ -33,40 +33,40 @@
 
             <div class="card-body">
                 <?= $validation->listErrors(); ?>
-                <form action="/drug/update/<?= $drug['id_drug']; ?>" method="post">
+                <form action="/medicine/update/<?= $medicine['id_medicine']; ?>" method="post">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="name_drug" class="form-label">Nama</label>
-                        <input type="text" class="form-control <?= ($validation->hasError('name_drug')) ? 'is-invalid' : ''; ?>" id="name_drug" name="name_drug" autofocus value="<?= $drug['name_drug']; ?>">
+                        <label for="name_medicine" class="form-label">Nama</label>
+                        <input type="text" class="form-control <?= ($validation->hasError('name_medicine')) ? 'is-invalid' : ''; ?>" id="name_medicine" name="name_medicine" autofocus value="<?= $medicine['name_medicine']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="reg_num" class="form-label">No. Regristrasi </label>
-                        <input type="number" class="form-control" id="reg_num" name="reg_num" value="<?= $drug['reg_num']; ?>">
+                        <input type="number" class="form-control" id="reg_num" name="reg_num" value="<?= $medicine['reg_num']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="produsen" class="form-label">Produsen</label>
                         <!-- <input type="text" class="form-control" id="produsen" name="produsen"> -->
-                        <input type="text" class="form-control" id="produsen" name="produsen" value="<?= $drug['produsen']; ?>">
+                        <input type="text" class="form-control" id="produsen" name="produsen" value="<?= $medicine['produsen']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="distributor" class="form-label">Distributor</label>
-                        <input type="text" class="form-control" id="distributor" name="distributor" value="<?= $drug['distributor']; ?>">
+                        <input type="text" class="form-control" id="distributor" name="distributor" value="<?= $medicine['distributor']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="stok" class="form-label">Stok</label>
-                        <input type="number" class="form-control" id="stok" name="stok" value="<?= $drug['stok']; ?>">
+                        <input type="number" class="form-control" id="stok" name="stok" value="<?= $medicine['stok']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="expired" class="form-label">Exp</label>
-                        <input type="date" class="form-control" id="expired" name="expired" value="<?= $drug['expired']; ?>">
+                        <input type="date" class="form-control" id="expired" name="expired" value="<?= $medicine['expired']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="unit_price" class="form-label">Harga Satuan</label>
-                        <input type="number" class="form-control" id="unit_price" name="unit_price" value="<?= $drug['unit_price']; ?>">
+                        <input type="number" class="form-control" id="unit_price" name="unit_price" value="<?= $medicine['unit_price']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="composition" class="form-label">Komposisi</label>
-                        <input type="text" class="form-control" id="composition" name="composition" value="<?= $drug['composition']; ?>">
+                        <input type="text" class="form-control" id="composition" name="composition" value="<?= $medicine['composition']; ?>">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -31,6 +31,11 @@
     <script src="https://kit.fontawesome.com/52bd79fc65.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?= base_url() ?>/plugins/sweatalert2/sweetalert2.min.css">
     <script src="<?= base_url() ?>/plugins/sweatalert2/sweetalert2.all.min.js"></script>
+
+    <!--  -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -107,6 +112,18 @@
                             </a>
                         </li>
 
+                        <!-- ANTRIAN -->
+                        <li class="nav-item">
+                            <a href="/queue" class="nav-link <?= $menu == 'home' ? 'active' : '' ?>">
+                                &nbsp;
+                                <i class="fa-solid fa-people-line"></i>
+                                &nbsp;&nbsp; <p>
+                                    Antrian
+                                    <!-- <i class="right fas fa-angle-down"></i> -->
+                                </p>
+                            </a>
+                        </li>
+
                         <!-- DAFTAR -->
                         <li class="nav-item">
                             <a href="/" class="nav-link <?= $menu == 'daftar' ? 'active' : '' ?>">
@@ -120,7 +137,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/drug" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
+                                    <a href="/medicine" class="nav-link <?= $submenu == 'sub1' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Obat</p>
                                     </a>

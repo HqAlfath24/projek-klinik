@@ -11,7 +11,7 @@ class Prescription extends Migration
         $this->forge->addField([
             'id_prescription' => [  //id detail treatment
                 'type'           => 'VARCHAR',
-                'constraint'     => 11,
+                'constraint'     => '255',
                 // 'unsigned'       => true,
                 'auto_increment' => true,
             ],
@@ -31,23 +31,27 @@ class Prescription extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'drug_id' => [
+            'patient_slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'amount' => [  //jumlah
-                'type'       => 'INT',
-                'constraint' => '255',
-            ],
-            'dose' => [  //dosis
-                'type'       => 'INT',
-                'constraint' => '255',
-            ],
-            'frequency' => [  //frekuensi
+            'medicine_id' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'information' => [  //informasi
+            'name_medicine' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'quantity' => [  //jumlah
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'dosage' => [  //dosis
+                'type'       => 'INT',
+                'constraint' => '255',
+            ],
+            'instructions' => [  //frekuensi
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],

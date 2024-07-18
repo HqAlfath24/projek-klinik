@@ -3,14 +3,14 @@
 namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
-use App\Models\ObatModel;
+use App\Models\MedicineModel;
 
-class Obat extends BaseController
+class Medicine extends BaseController
 {
-    protected $obatModel;
+    protected $medicineModel;
     public function __construct()
     {
-        $this->obatModel = new ObatModel();
+        $this->medicineModel = new MedicineModel();
     }
 
     public function index()
@@ -19,7 +19,7 @@ class Obat extends BaseController
             'title' => 'Daftar Obat | Klinik Erins',
             'menu' => 'daftar',
             'submenu' => 'sub1',
-            'drug' => $this->obatModel->getObat(),
+            'medicine' => $this->medicineModel->getMedicine(),
         ];
         return view('admin/daftar/obat/list', $data);
     }
@@ -41,18 +41,18 @@ class Obat extends BaseController
     public function save()
     {
         if (!$this->validate([
-            'name_drug' => 'required',
-            'reg_num' => 'required|is_unique[drug.reg_num]',
+            'name_medicine' => 'required',
+            'reg_num' => 'required|is_unique[medicine.reg_num]',
         ])) {
             $validation = \Config\Services::validation();
-            // dd($validation);
-            return redirect()->to('/drug/create')->withInput()->with('validation', $validation);
+            dd($validation);
+            // return redirect()->to('/medicine/create')->withInput()->with('validation', $validation);
         }
 
-        $slug = url_title($this->request->getVar('name_drug'), '-', true);
-        $this->obatModel->save([
+        $slug = url_title($this->request->getVar('name_medicine'), '-', true);
+        $this->medicineModel->save([
             'slug' => $slug,
-            'name_drug' => $this->request->getVar('name_drug'),
+            'name_medicine' => $this->request->getVar('name_medicine'),
             'reg_num' => $this->request->getVar('reg_num'),
             'produsen' => $this->request->getVar('produsen'),
             'distributor' => $this->request->getVar('distributor'),
@@ -66,7 +66,7 @@ class Obat extends BaseController
 
         session()->setFlashdata('message', 'Data berhasil ditambahkan.');
 
-        return redirect()->to('/drug');
+        return redirect()->to('/medicine');
     }
 
     public function detail($slug)
@@ -74,7 +74,7 @@ class Obat extends BaseController
 
         $data = [
             // 'title' => 'Daftar Pasien | Klinik Erins', //sesuaikan saja wkwkk
-            'drug' => $this->obatModel->getObat($slug),
+            'medicine' => $this->medicineModel->getMedicine($slug),
         ];
         // dd($data); //jika sudah ada view-nya, line ini dihapus dan tambahkan view dibawah
         return view('admin/daftar/obat/detail', $data);
@@ -87,30 +87,30 @@ class Obat extends BaseController
             'menu' => 'daftar',
             'submenu' => 'sub1',
             'validation' => \Config\Services::validation(),
-            'drug' => $this->obatModel->getObat($slug),
+            'medicine' => $this->medicineModel->getMedicine($slug),
         ];
         // dd($data);
         return view('admin/daftar/obat/edit', $data);
     }
 
-    public function update($id_drug)
+    public function update($id_medicine)
     {
-        $currentDrug = $this->obatModel->find($id_drug);
+        $currentmedicine = $this->medicineModel->find($id_medicine);
         // dd($this->request->getVar());
         if (!$this->validate([
-            'name_drug' => 'required',
-            'reg_num' => 'required|is_unique[drug.reg_num]',
+            'name_medicine' => 'required',
+            'reg_num' => 'required|is_unique[medicine.reg_num]',
         ])) {
             // $validation = \Config\Services::validation();
             // // dd($validation);
-            // return redirect()->to('/patient/edit/' . $currentDrug['slug'])->withInput()->with('validation', $validation);
+            // return redirect()->to('/patient/edit/' . $currentmedicine['slug'])->withInput()->with('validation', $validation);
         }
 
-        $slug = url_title($this->request->getVar('name_drug'), '-', true);
-        $this->obatModel->save([
-            'id_drug' => $id_drug,
+        $slug = url_title($this->request->getVar('name_medicine'), '-', true);
+        $this->medicineModel->save([
+            'id_medicine' => $id_medicine,
             'slug' => $slug,
-            'name_drug' => $this->request->getVar('name_drug'),
+            'name_medicine' => $this->request->getVar('name_medicine'),
             'reg_num' => $this->request->getVar('reg_num'),
             'produsen' => $this->request->getVar('produsen'),
             'distributor' => $this->request->getVar('distributor'),
@@ -124,13 +124,13 @@ class Obat extends BaseController
 
         session()->setFlashdata('message', 'Data berhasil diubah.');
 
-        return redirect()->to('/drug');
+        return redirect()->to('/medicine');
     }
 
-    public function delete($id_drug)
+    public function delete($id_medicine)
     {
-        $this->obatModel->delete($id_drug);
+        $this->medicineModel->delete($id_medicine);
         session()->setFlashdata('message', 'Data berhasil dihapus.');
-        return redirect()->to('/drug');
+        return redirect()->to('/medicine');
     }
 }
