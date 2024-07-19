@@ -4,13 +4,16 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\MedicineModel;
+use App\Services\DompdfService;
 
 class Medicine extends BaseController
 {
     protected $medicineModel;
+    protected $dompdfService;
     public function __construct()
     {
         $this->medicineModel = new MedicineModel();
+        $this->dompdfService = new DompdfService();
     }
 
     public function index()
@@ -132,5 +135,51 @@ class Medicine extends BaseController
         $this->medicineModel->delete($id_medicine);
         session()->setFlashdata('message', 'Data berhasil dihapus.');
         return redirect()->to('/medicine');
+    }
+
+    // public function printStock()
+    // {
+    //     $data = [
+    //         'title' => 'Daftar Stok Obat',
+    //         'medicine' => $this->medicineModel->findAll(),
+    //     ];
+
+    //     $html = view('admin/daftar/obat/stock', $data);
+
+    //     $dompdf = $this->dompdfService->getDompdf();
+    //     $dompdf->loadHtml($html);
+    //     $dompdf->setPaper('A4', 'portrait');
+    //     $dompdf->render();
+
+    //     $dompdf->stream('daftar_stok_obat.pdf', ['Attachment' => false]);
+
+    //     // return view('medicine/stock');
+    // }
+
+    public function printStock()
+    {
+        $data = [
+            'title' => 'Daftar Stok Obat',
+            'medicine' => $this->medicineModel->findAll(),
+        ];
+
+        $html = view('admin/daftar/obat/stock', $data);
+
+        $filename = date('y-m-d-H-i-s') . '-daftar-stok-obat';
+
+        // Buat objek Dompdf
+        $dompdf = new \Dompdf\Dompdf();
+
+        // Load konten HTML
+        $dompdf->loadHtml($html);
+
+        // Setel ukuran kertas dan orientasi
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render HTML sebagai PDF
+        $dompdf->render();
+
+        // Output PDF yang dihasilkan
+        $dompdf->stream($filename, ['Attachment' => false]);
     }
 }
