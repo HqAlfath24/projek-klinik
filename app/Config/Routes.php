@@ -24,6 +24,7 @@ $routes->get('/dashboard', 'Admin\Dashboard::index');
 // =============== queue ===============
 $routes->get('/queue', 'Admin\Queue::index');
 $routes->get('/queue/check/(:segment)', 'Admin\Queue::check/$1');
+$routes->get('/queue/printQueue/(:segment)', 'Admin\Queue::printQueue/$1');
 // $routes->get('search', 'Admin\Queue::search');
 // // =====
 $routes->post('/queue/save', 'Admin\Queue::save');

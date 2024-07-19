@@ -1,49 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Cetak Nomor Antrian</title>
+    <title>Invoice</title>
     <style>
-        .queue-card {
-            width: 300px;
-            border: 2px solid #000;
-            padding: 20px;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #000000;
             text-align: center;
-            font-family: Arial, sans-serif;
-            margin: 0 auto;
-        }
-
-        .queue-header {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .queue-body {
-            margin-top: 20px;
-            font-size: 16px;
-        }
-
-        .queue-footer {
-            margin-top: 20px;
-            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
-    <div class="queue-card">
-        <div class="queue-header">Klinik Erins</div>
-        <div class="queue-body">
-            <p>Nomor Antrian</p>
-            <h1><?= $mrecord['id']; ?></h1>
-            <p>Nama: <?= $patient['name']; ?></p>
-            <p>Poli: <?= $polyclinic['name']; ?></p>
-        </div>
-        <div class="queue-footer">
-            <p><?= date('d-m-Y'); ?></p>
-        </div>
-    </div>
+    <div style="font-size:32px; color:'#dddddd' "><i><?= $title; ?></i></div>
+    <p>
+        Semarang, Indonesia<br>
+        024123456
+    </p>
+    <h4>Nomor Antrian</h4>
+    <h1><u><?= $mrecord['poly_code']; ?><?= $mrecord['num_queue']; ?></u></h1><br>
+    <p>
+        <?= $mrecord['patient_slug']; ?><br>
+        <?= $mrecord['poly_code']; ?><br><br>
+        Nomor antrian ini hanya berlaku pada <br>
+        <?= date('d-m-y'); ?><br><br>
+        <b>
+            Terimakasih Anda Terlah Tertib<br>
+            Semoga Sehat Selalu
+        </b>
+    </p>
+
 </body>
 
 </html>
