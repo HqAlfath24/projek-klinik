@@ -4,16 +4,14 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\MedicineModel;
-use App\Services\DompdfService;
+use Dompdf\Dompdf;
 
 class Medicine extends BaseController
 {
     protected $medicineModel;
-    protected $dompdfService;
     public function __construct()
     {
         $this->medicineModel = new MedicineModel();
-        $this->dompdfService = new DompdfService();
     }
 
     public function index()
@@ -168,7 +166,7 @@ class Medicine extends BaseController
         $filename = date('y-m-d-H-i-s') . '-daftar-stok-obat';
 
         // Buat objek Dompdf
-        $dompdf = new \Dompdf\Dompdf();
+        $dompdf = new Dompdf();
 
         // Load konten HTML
         $dompdf->loadHtml($html);
