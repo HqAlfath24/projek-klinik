@@ -9,6 +9,8 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 80px;
+            /* Spasi untuk tanda tangan */
         }
 
         th,
@@ -20,6 +22,27 @@
 
         th {
             background-color: #f2f2f2;
+        }
+
+        @media print {
+            .signature-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                padding: 0 10px;
+                position: absolute;
+                bottom: 20px;
+                width: calc(100% - 20px);
+                /* Adjust for padding */
+            }
+
+            .signature {
+                border-top: 1px solid black;
+                text-align: center;
+                padding-top: 5px;
+                margin: 0;
+                width: 45%;
+            }
         }
     </style>
 </head>
@@ -57,6 +80,21 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+
+    <!-- Tempat tanda tangan -->
+    <div class="signature-container">
+        <p>Semarang</p>
+        <p><?= $date; ?></p>
+        <p class="">Mengetahui:</p> <!-- pindah ke tengah -->
+        <br><br><br>
+        <!-- buat sejajar -->
+        <div class="signature">
+            <h4>( <?= $title; ?> )</h4>
+        </div>
+        <div class="signature">
+            <h4>( <?= $title; ?> )</h4>
+        </div>
+    </div>
 </body>
 
 </html>

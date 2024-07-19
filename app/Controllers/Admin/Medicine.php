@@ -156,10 +156,33 @@ class Medicine extends BaseController
 
     public function printStock()
     {
+        // Set locale untuk bahasa Indonesia
+        $locale = 'id_ID';
+        $dateFormat = 'EEEE, dd MMMM yyyy'; // Format tanggal dan hari
+
+        // Membuat objek IntlDateFormatter untuk format tanggal
+        $formatter = new \IntlDateFormatter(
+            $locale,
+            \IntlDateFormatter::FULL,
+            \IntlDateFormatter::NONE,
+            'Asia/Jakarta',
+            \IntlDateFormatter::GREGORIAN,
+            $dateFormat
+        );
+
+        // Mendapatkan tanggal saat ini
+        $currentDate = new \DateTime();
+
+        // Format tanggal
+        $formattedDate = $formatter->format($currentDate);
+
         $data = [
             'title' => 'Daftar Stok Obat',
             'medicine' => $this->medicineModel->findAll(),
+            'date' => $formattedDate,
         ];
+
+        // dd($data);
 
         $html = view('admin/daftar/obat/stock', $data);
 
