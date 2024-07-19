@@ -72,6 +72,7 @@ $routes->get('/medicine', 'Admin\Medicine::index');
 $routes->get('/medicine/create', 'Admin\Medicine::create');
 $routes->get('/medicine/detail/(:segment)', 'Admin\Medicine::detail/$1');
 $routes->get('/medicine/edit/(:segment)', 'Admin\Medicine::edit/$1');
+$routes->get('/medicine/printStock', 'Admin\Medicine::printStock');
 // =====
 $routes->post('/medicine/save', 'Admin\Medicine::save');
 $routes->post('/medicine/update/(:segment)', 'Admin\Medicine::update/$1');
