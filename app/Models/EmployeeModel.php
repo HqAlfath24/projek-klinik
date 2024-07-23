@@ -20,6 +20,7 @@ class EmployeeModel extends Model
         'gender',
         'emp_num',
         'email',
+        'password',
         'phone',
         'address',
         'account_num',

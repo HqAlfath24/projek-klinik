@@ -38,6 +38,10 @@ class Employ extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'password' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'phone' => [
                 'type'       => 'INT',
                 'constraint' => '255',

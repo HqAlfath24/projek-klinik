@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Invoice</title>
+    <title>Antrian</title>
     <style>
         table {
             border-collapse: collapse;

@@ -20,6 +20,7 @@ class PasienModel extends Model
         'gender',
         'phone',
         'email',
+        'password',
         'address',
         'badge',
         'no_badge',
