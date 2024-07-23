@@ -17,6 +17,7 @@ class DokterModel extends Model
         'name_doctor',
         'gender',
         'email',
+        'password',
         'phone',
         'address',
         'speciality',

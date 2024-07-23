@@ -117,11 +117,12 @@
                                     <td><?= $mr['num_queue']; ?></td>
                                     <td><?= $mr['status']; ?></td>
                                     <td>
-                                        <!-- check button -->
-                                        <button class="btn btn-primary btn-sm" onclick="printQueue(<?= $mr['id_mrecord']; ?>)">
-                                            <i class="fa-solid fa-print" title="print"></i>
+                                        <!-- print queue -->
+                                        <button type="button" class="btn btn-info btn-sm" title="Cetak" onclick="printQueue('<?= $mr['id_mrecord']; ?>');">
+                                            <i class="fa-solid fa-print" title="Cetak Antrian"></i>
                                         </button>
 
+                                        <!-- check button -->
                                         <button type="submit" class="btn btn-warning btn-sm " title="Hapus" onclick="confirmCheck('/queue/check/<?= $mr['id_mrecord']; ?>');">
                                             <i class="fa-solid fa-file-waveform" title="check"></i>
                                         </button>
@@ -166,7 +167,7 @@
 <!-- cetak no antrian -->
 <script>
     function printQueue(id) {
-        var url = "/mrecord/printQueue/" + id;
+        var url = "/queue/printQueue/" + id;
         window.open(url, '_blank');
     }
 </script>

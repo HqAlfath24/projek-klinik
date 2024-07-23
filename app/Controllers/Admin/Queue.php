@@ -7,6 +7,7 @@ use App\Models\MedicineModel;
 use App\Models\MrecordModel;
 use App\Models\PasienModel;
 use App\Models\PolyclinicModel;
+use Dompdf\Dompdf;
 
 class Queue extends BaseController
 {
@@ -92,61 +93,33 @@ class Queue extends BaseController
         return view('admin/check', $data);
     }
 
-    // public function edit_poly()
-    // {
-    //     $data = [
-    //         'title' => 'Form Edit Daftar Dokter | Klinik Erins',
-    //         'menu' => 'daftar',
-    //         'submenu' => 'sub3',
-    //     ];
-    //     return view('admin/daftar/polyclinic/edit_polyclinic', $data);
-    // }
+    public function printQueue($id_mrecord)
+    {
+        $data = [
+            'title' => "Klinik Erin's",
+            'mrecord' => $this->mrecordModel->getMrecord($id_mrecord),
+            // 'date' => $formattedDate,
+        ];
 
-    // public function edit($slug)
-    // {
-    //     $data = [
-    //         'title' => 'Form Edit Daftar Dokter | Klinik Erins',
-    //         'menu' => 'daftar',
-    //         'submenu' => 'sub1',
-    //         'validation' => \Config\Services::validation(),
-    //         'polyclinic' => $this->polyclinicModel->getPoly($slug),
-    //     ];
-    //     // dd($data);
-    //     return view('admin/daftar/polyclinic/edit', $data);
-    // }
+        // dd($data);
 
-    // public function update($id_poly)
-    // {
-    //     $currentPoly = $this->polyclinicModel->find($id_poly);
-    //     // dd($this->request->getVar());
-    //     if (!$this->validate([
-    //         'name_poly' => 'required',
-    //         'poly_code' => 'required|is_unique[polyclinic.poly_code]',
-    //     ])) {
-    //         // $validation = \Config\Services::validation();
-    //         // dd($validation);
-    //         // return redirect()->to('/patient/edit/' . $currentPoly['slug'])->withInput()->with('validation', $validation);
-    //     }
+        $html = view('admin/print_queue', $data);
 
-    //     $slug = url_title($this->request->getVar('name_poly'), '-', true);
-    //     $this->polyclinicModel->save([
-    //         'id_poly' => $id_poly,
-    //         'slug' => $slug,
-    //         'name_poly' => $this->request->getVar('name_poly'),
-    //         'poly_code' => $this->request->getVar('poly_code'),
-    //     ]);
+        $filename = date('y-m-d-H-i-s') . '-daftar-stok-obat';
 
-    //     // dd($this->request->getVar());
+        // Buat objek Dompdf
+        $dompdf = new Dompdf();
 
-    //     session()->setFlashdata('message', 'Data berhasil diubah.');
+        // Load konten HTML
+        $dompdf->loadHtml($html);
 
-    //     return redirect()->to('/polyclinic');
-    // }
+        // Setel ukuran kertas dan orientasi
+        $dompdf->setPaper('A6', 'potrait');
 
-    // public function delete($id_poly)
-    // {
-    //     $this->polyclinicModel->delete($id_poly);
-    //     session()->setFlashdata('message', 'Data berhasil dihapus.');
-    //     return redirect()->to('/polyclinic');
-    // }
+        // Render HTML sebagai PDF
+        $dompdf->render();
+
+        // Output PDF yang dihasilkan
+        $dompdf->stream($filename, ['Attachment' => false]);
+    }
 }
